@@ -3,6 +3,9 @@
 
 ---
 
+![profile](https://github.com/user-attachments/assets/2ff69e0a-89eb-4670-b09b-ee4ebaa814ae)
+
+
 ### Education  
 `Software Engineer`
 
