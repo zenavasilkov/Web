@@ -1,3 +1,3 @@
 # Web
 
-[CV](./lab2/cv.md)
+[CV](https://zenavasilkov.github.io/Web/)
