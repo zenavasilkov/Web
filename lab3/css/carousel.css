@@ -1,0 +1,93 @@
+﻿.carousel-section {
+    margin-bottom: 60px;
+    padding: 0 40px;
+}
+
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel__track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel__slide {
+    flex: 0 0 auto;
+    transition: all 0.5s ease;
+    opacity: 0.7;
+}
+
+.carousel__slide--left {
+    position: absolute;
+    left: -15%;
+    width: 40%;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+.carousel__slide--center {
+    height: 30%;
+    z-index: 2;
+    opacity: 1;
+}
+
+.carousel__slide--right {
+    position: absolute;
+    right: -15%;
+    width: 40%;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+.carousel__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.carousel__arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    flex-shrink: 0;
+    transition: opacity 0.3s;
+    z-index: 3;
+}
+
+.carousel__arrow:hover {
+    opacity: 0.7;
+}
+
+.carousel__arrow img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.carousel__arrow--left {
+    position: absolute;
+    left: 0;
+}
+
+.carousel__arrow--right {
+    position: absolute;
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    .carousel__arrow img {
+        width: 30px;
+        height: 30px;
+    }
+}
