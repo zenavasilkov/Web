@@ -150,8 +150,13 @@
     }
 }
 
+.social-link {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
 .social-link:hover {
-    animation: socialPulse 1s ease-in-out infinite;
+    transform: scale(1.2);
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {

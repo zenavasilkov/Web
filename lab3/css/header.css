@@ -202,7 +202,6 @@
     .header__nav,
     .header__sub-nav {
         position: fixed;
-        top: 80px;
         left: 0;
         width: 100%;
         background: #fff;
@@ -222,7 +221,6 @@
     }
 
     .header__sub-nav {
-        top: 80px;
         border-top: 1px solid #eee;
     }
 
@@ -293,7 +291,7 @@
     }
 
     .btn-black, .btn-outline {
-        font-size: 9px;
+        font-size: 10px;
         padding: 5px 10px;
     }
 
