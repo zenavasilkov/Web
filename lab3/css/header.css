@@ -1,0 +1,174 @@
+﻿.header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.header__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.lang-switch {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.icon-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.header-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    cursor: pointer;
+    display: block;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    gap: 30px;
+    border-top: 1px solid #eee;
+    padding: 15px 0 0 0;
+}
+
+.nav__list a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+
+.header__sub-nav {
+    display: flex;
+    gap: 25px;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.header__sub-nav a {
+    text-decoration: none;
+    color: #666;
+}
+
+@media (max-width: 1200px) {
+    .nav__list {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .nav__list a {
+        font-size: 13px;
+    }
+
+    .header__sub-nav {
+        gap: 15px;
+        font-size: 11px;
+    }
+
+    .header__actions {
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    .btn-black {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header__top {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav__list {
+        gap: 15px;
+    }
+
+    .nav__list a {
+        font-size: 12px;
+    }
+
+    .header__sub-nav {
+        gap: 12px;
+        font-size: 10px;
+        flex-wrap: wrap;
+    }
+
+    .header__actions {
+        gap: 12px;
+        font-size: 11px;
+    }
+
+    .btn-black, .btn-outline {
+        padding: 7px 14px;
+        font-size: 12px;
+    }
+
+    .header-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__nav {
+        display: none;
+    }
+
+    .header__sub-nav {
+        display: none;
+    }
+
+    .header__top {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .header__actions {
+        gap: 10px;
+        font-size: 10px;
+    }
+
+    .btn-black, .btn-outline {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+
+    .lang-switch {
+        font-size: 10px;
+    }
+
+    .header-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__actions .lang-switch {
+        display: none;
+    }
+
+    .btn-black, .btn-outline {
+        font-size: 9px;
+        padding: 5px 10px;
+    }
+}
