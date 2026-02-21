@@ -1,4 +1,4 @@
-﻿@keyframes fade-in-up {
+﻿@keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(30px);
@@ -21,7 +21,7 @@
 .program-item:nth-child(3) { animation-delay: 0.15s; }
 
 
-@keyframes gradient-shift {
+@keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
@@ -54,7 +54,7 @@
     transform: scale(1.1);
 }
 
-@keyframes rotate-phone {
+@keyframes rotatePhone {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
@@ -107,7 +107,7 @@
     width: 100%;
 }
 
-@keyframes slide-pulse {
+@keyframes slidePulse {
     0%, 100% { transform: translateX(0); }
     50% { transform: translateX(10px); }
 }
@@ -139,7 +139,7 @@
     width: 100%;
 }
 
-@keyframes social-pulse {
+@keyframes socialPulse {
     0%, 100% {
         transform: scale(1);
         opacity: 1;
@@ -200,7 +200,7 @@
     transform: translateY(-10px);
 }
 
-@keyframes page-load {
+@keyframes pageLoad {
     from {
         opacity: 0;
     }
