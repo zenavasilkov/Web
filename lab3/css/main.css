@@ -1,5 +1,11 @@
 ﻿@import url('variables.css');
+@import url('reset.css');
+@import url('buttons.css');
 @import url('header.css');
 @import url('hero.css');
 @import url('carousel.css');
 @import url('school-description.css');
+@import url('programs.css');
+@import url('news.css');
+@import url('resources.css');
+@import url('about-hse.css');

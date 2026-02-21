@@ -1,0 +1,30 @@
+﻿.btn-black {
+    background-color: #313130;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.btn-black:hover {
+    background-color: #000;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #000;
+    color: #000;
+    padding: 10px 25px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: var(--font-main), serif;
+}
+
+.btn-outline:hover {
+    background: #000;
+    color: #fff;
+}

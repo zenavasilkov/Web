@@ -1,0 +1,120 @@
+﻿.about-hse-section {
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+}
+
+.about-hse__title {
+    font-family: "Roboto", sans-serif;
+    font-size: clamp(36px, 5vw, 94px);
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.1;
+    width: 85%;
+    margin: 0 auto 60px auto;
+}
+
+.about-hse__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 85%;
+    margin: 0 auto 60px auto;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #000;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-item__number {
+    font-family: "Roboto", sans-serif;
+    font-size: clamp(48px, 6vw, 72px);
+    font-weight: 400;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.stat-item__label {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #333;
+    max-width: 280px;
+}
+
+.about-hse__description {
+    max-width: 800px;
+    width: 85%;
+    margin: 0 auto 40px auto;
+}
+
+.about-hse__description p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-hse__description p:last-child {
+    margin-bottom: 0;
+}
+
+.about-hse__actions {
+    display: flex;
+    gap: 20px;
+    width: 85%;
+    margin: 40px auto 0 auto;
+}
+
+.btn-light {
+    background: #f0f0f0;
+    color: #000;
+    padding: 10px 25px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-main), serif;
+}
+
+.btn-light:hover {
+    background: #e0e0e0;
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+    .about-hse-section {
+        padding: 40px 0;
+    }
+
+    .about-hse__stats {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .stat-item__number {
+        font-size: 40px;
+    }
+
+    .btn-black,
+    .btn-light {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-item__number {
+        font-size: 36px;
+    }
+
+    .stat-item__label {
+        font-size: 14px;
+    }
+}
