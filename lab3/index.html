@@ -2,24 +2,30 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HSE Art and Design School</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&family=Roboto:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/mobile-menu.js"></script>
 </head>
 <body>
 
 <header class="header">
     <div class="container">
         <div class="header__top">
-            <img src="images/HSE_UNIVERSITY_ART_AND_DESIGN.png" height="30" width="270" alt="logo"/>
+            <img src="images/HSE_UNIVERSITY_ART_AND_DESIGN.png" height="30" width="270" alt="HSE University Art and Design" class="header__logo">
 
             <div class="header__actions">
                 <a href="#" class="lang-switch">EN</a>
                 <a href="#" class="lang-switch">中文</a>
                 <img src="images/dial.png" alt="Позвонить" class="header-icon">
                 <a href="#" class="btn-black">Как поступить</a>
+
+                <button class="header__menu-button" aria-label="Меню" aria-expanded="false">
+                    <span class="header__menu-icon"></span>
+                </button>
             </div>
         </div>
 
@@ -53,7 +59,48 @@
 
 <main>
     <section class="hero-banners">
-        <div class="container"><img src="images/top_banner.png" alt="Дни открытых дверей: 21, 23 и 31 января" class="full-width-banner"></div>
+        <div class="container">
+            <div class="banners-grid">
+                <!-- Banner 1 -->
+                <article class="banner-card">
+                    <div class="banner-card__image">
+                        <img src="images/banner-1.PNG" alt="Дни открытых дверей 21 января — Бакалавриат Дизайн и Мода">
+                    </div>
+                    <div class="banner-card__content">
+                        <p class="banner-card__subtitle">Дни открытых дверей</p>
+                        <p class="banner-card__date">21 января | 12:00 — Бакалавриат<br>«Дизайн» и «Мода»</p>
+                        <a href="#" class="banner-card__link">Регистрация</a>
+                        <span class="banner-card__big-date">21.01</span>
+                    </div>
+                </article>
+
+                <!-- Banner 2 -->
+                <article class="banner-card">
+                    <div class="banner-card__image banner-card__image--orange">
+                        <img src="images/banner-2.png" alt="Дни открытых дверей 23 января — Магистратура">
+                    </div>
+                    <div class="banner-card__content">
+                        <p class="banner-card__subtitle">Дни открытых дверей</p>
+                        <p class="banner-card__date">23 января | 19:00 — Магистратура /<br>Дополнительное образование</p>
+                        <a href="#" class="banner-card__link">Регистрация</a>
+                        <span class="banner-card__big-date">23.01</span>
+                    </div>
+                </article>
+
+                <!-- Banner 3 -->
+                <article class="banner-card">
+                    <div class="banner-card__image">
+                        <img src="images/banner-3.PNG" alt="Дни открытых дверей 31 января — Современное искусство">
+                    </div>
+                    <div class="banner-card__content">
+                        <p class="banner-card__subtitle">Дни открытых дверей</p>
+                        <p class="banner-card__date">31 января | 18:00 — Бакалавриат<br>«Современное искусство»</p>
+                        <a href="#" class="banner-card__link">Регистрация</a>
+                        <span class="banner-card__big-date">31.01</span>
+                    </div>
+                </article>
+            </div>
+        </div>
     </section>
 
     <section class="main-title-section">
@@ -200,7 +247,7 @@
                     <div class="news-item__content">
                         <h3 class="news-item__title">Итоги фестиваля нового дизайна «Среда 2022».</h3>
                         <p class="news-item__excerpt">
-                            23 ноября на сайте фестиваля нового дизайна «Среда 2022» были были опубликованы результаты голосования жюри, определившего триумфаторов фестиваля. В очередной раз проекты студентов, выпускников и кураторов Школы дизайна заняли несколько призовых мест и получили специальные награды, а Школа дизайна второй год подряд стала Учебным заведением года!
+                            23 ноября на сайте фестиваля нового дизайна «Среда 2022» были опубликованы результаты голосования жюри, определившего триумфаторов фестиваля. В очередной раз проекты студентов, выпускников и кураторов Школы дизайна заняли несколько призовых мест и получили специальные награды, а Школа дизайна второй год подряд стала Учебным заведением года!
                         </p>
                     </div>
                 </article>
@@ -402,7 +449,7 @@
                         <span>По вопросам поступления<br>Детская школа</span>
                     </div>
                     <div class="phone-item">
-                        <a href="tel:+78010166393">+7 495 016-63-93</a>
+                        <a href="tel:+78010166393">+7 801 016-63-93</a>
                         <span>По вопросам поступления<br>Дополнительное образование в Санкт-Петербурге</span>
                     </div>
                 </div>
@@ -558,8 +605,8 @@
                 <a href="#" class="social-link"><img src="images/vk_footer.png" alt="VK"></a>
                 <a href="#" class="social-link"><img src="images/v_footer.png" alt="V"></a>
                 <a href="#" class="social-link"><img src="images/youtube_footer.png" alt="YouTube"></a>
-                <a href="#" class="social-link"><img src="images/telegram_footer.png" alt="VK"></a>
-                <a href="#" class="social-link"><img src="images/circle_footer.png" alt="Telegram"></a>
+                <a href="#" class="social-link"><img src="images/telegram_footer.png" alt="Telegram"></a>
+                <a href="#" class="social-link"><img src="images/circle_footer.png" alt="Circle"></a>
             </div>
         </div>
     </div>

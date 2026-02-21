@@ -1,5 +1,5 @@
 ﻿.section-title {
-    font-family: "Roboto", sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: 57px;
     font-weight: 400;
     text-transform: uppercase;
@@ -55,7 +55,7 @@
     }
 
     .section-title {
-        font-size: 20px;
+        font-size: 36px;
     }
 
     .program-item {

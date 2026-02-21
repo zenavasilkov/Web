@@ -8,86 +8,81 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 400px;
 }
 
 .carousel__track {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0;
+    height: 100%;
     width: 100%;
     position: relative;
-    overflow: hidden;
 }
 
 .carousel__slide {
     flex: 0 0 auto;
     transition: all 0.5s ease;
     opacity: 0.7;
+    height: 100%; /* Все слайды на всю высоту */
+    display: flex;
+    align-items: center;
 }
 
 .carousel__slide--left {
-    position: absolute;
-    left: -15%;
-    width: 40%;
-    z-index: 1;
-    opacity: 0.6;
+    width: 10%;
 }
 
 .carousel__slide--center {
-    height: 30%;
-    z-index: 2;
+    width: 55%;
     opacity: 1;
+    z-index: 2;
 }
 
 .carousel__slide--right {
-    position: absolute;
-    right: -15%;
-    width: 40%;
-    z-index: 1;
-    opacity: 0.6;
+    width: 35%;
 }
 
 .carousel__image {
     width: 100%;
-    height: auto;
+    height: 100%; /* Картинка на всю высоту слайда */
     display: block;
-    object-fit: cover;
+    object-fit: cover; /* Заполняет всё пространство, обрезая лишнее */
 }
 
-.carousel__arrow {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    flex-shrink: 0;
-    transition: opacity 0.3s;
-    z-index: 3;
+@media (max-width: 1200px) {
+    .carousel {
+        height: 400px;
+    }
 }
 
-.carousel__arrow:hover {
-    opacity: 0.7;
-}
-
-.carousel__arrow img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-}
-
-.carousel__arrow--left {
-    position: absolute;
-    left: 0;
-}
-
-.carousel__arrow--right {
-    position: absolute;
-    right: 0;
+@media (max-width: 992px) {
+    .carousel {
+        height: 350px;
+    }
 }
 
 @media (max-width: 768px) {
+    .carousel {
+        height: 300px;
+    }
+
+    .carousel__track {
+        gap: 10px;
+    }
+
     .carousel__arrow img {
         width: 30px;
         height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-section {
+        padding: 0 10px;
+    }
+
+    .carousel {
+        height: 250px;
     }
 }

@@ -57,10 +57,16 @@
 @media (max-width: 768px) {
     .school-description__text {
         font-size: 18px;
+        width: 90%;
     }
 
     .school-description__actions {
         align-items: flex-start;
+        width: 90%;
+    }
+
+    .school-description__subtitle {
+        width: 90%;
     }
 
     .social-icons {

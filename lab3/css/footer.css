@@ -1,4 +1,4 @@
-﻿.footer {
+.footer {
     background-color: #1a1a1a;
     color: #fff;
     padding: 60px 0 30px;
@@ -212,7 +212,8 @@
 }
 
 .footer__newsletter-input:focus {
-    outline: none;
+    outline: 2px solid #fff;
+    outline-offset: 2px;
     border-color: #fff;
 }
 
