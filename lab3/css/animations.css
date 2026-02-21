@@ -1,8 +1,4 @@
-﻿.btn-black {
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes fadeInUp {
+﻿@keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(30px);
@@ -158,27 +154,29 @@
     animation: socialPulse 1s ease-in-out infinite;
 }
 
-.header__nav {
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
+@media (max-width: 768px) {
+    .header__nav {
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-.header__nav--open {
-    transform: translateX(0);
-    opacity: 1;
+    .header__nav--open {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .footer__newsletter-input {
     transition: all 0.3s ease-in-out;
-    border: 2px solid transparent;
 }
 
 .footer__newsletter-input:focus {
     border-width: 3px;
     border-color: #0f2d6b;
     box-shadow: 0 0 20px rgba(15, 45, 107, 0.3);
-    outline: none;
+    outline: 2px solid #fff;
+    outline-offset: 2px;
 }
 
 .banner-card {
@@ -187,10 +185,6 @@
 
 .banner-card:hover {
     transform: skew(-5deg) scale(1.02);
-}
-
-.banner-card:hover .banner-card__image {
-    transform: skew(5deg);
 }
 
 .banner-card__image {
@@ -203,11 +197,9 @@
 
 @keyframes pageLoad {
     from {
-        height: 0;
         opacity: 0;
     }
     to {
-        height: auto;
         opacity: 1;
     }
 }

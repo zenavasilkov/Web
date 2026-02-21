@@ -3,7 +3,7 @@
     const headerNav = document.querySelector('.header__nav');
     const headerSubNav = document.querySelector('.header__sub-nav');
 
-    if (menuButton) {
+    if (menuButton && headerNav && headerSubNav) {
         menuButton.addEventListener('click', function() {
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
 
