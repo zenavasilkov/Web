@@ -78,3 +78,9 @@
         height: 30px;
     }
 }
+
+@media (max-width: 480px) {
+    .school-description__subtitle {
+        display: none;
+    }
+}

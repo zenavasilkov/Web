@@ -298,4 +298,12 @@
     .header__logo {
         max-width: 150px;
     }
+
+    .header-icon {
+        display: none;
+    }
+
+    #header-button {
+        display: none;
+    }
 }

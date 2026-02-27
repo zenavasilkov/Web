@@ -63,7 +63,7 @@
 .about-hse__actions {
     display: flex;
     gap: 20px;
-    width: 85%;
+    width: 70%;
     margin: 40px auto 0 auto;
 }
 
@@ -83,8 +83,13 @@
 
     .btn-black,
     .btn-light {
-        width: 100%;
+        width: 70%;
+        margin: 0 auto 0 auto;
         text-align: center;
+    }
+
+    .about-hse-section {
+        display: none;
     }
 }
 

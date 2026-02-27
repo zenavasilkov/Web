@@ -18,7 +18,8 @@
 .footer__logo img {
     max-width: 300px;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    transition: max-width 0.3s ease;
 }
 
 .footer__subtitle {
@@ -269,6 +270,7 @@
 
     .footer__contacts {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .footer__nav,
@@ -282,8 +284,33 @@
         padding: 40px 0 20px;
     }
 
+    .footer__contacts {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer__student-links a,
+    .footer__subtitle {
+        font-size: 10px;
+    }
+
+    .btn-feedback {
+        font-size: 10px;
+        font-weight: 400;
+        padding: 12px 30px;
+    }
+
+    .phone-item a {
+        font-size: 14px;
+    }
+
+    .phone-item span {
+        font-size: 10px;
+    }
+
     .footer__phones-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .footer__nav,
@@ -305,14 +332,106 @@
         width: 30px;
         height: auto;
     }
+
+    .footer__nav,
+    .footer__bottom-nav {
+        display: none;
+    }
+
+    .footer__logo img {
+        max-width: 180px;
+    }
+
+    .address-item p,
+    .address-item a {
+        font-size: 12px;
+    }
+
+    .address-item span {
+        font-size: 10px;
+    }
+
+    .footer__top {
+        flex-direction: row;
+    }
+
+    .btn-feedback {
+        padding: 10px 20px;
+    }
 }
 
 @media (max-width: 480px) {
     .footer__logo img {
-        max-width: 200px;
+        max-width: 150px;
+    }
+
+    .footer__top {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer__contacts {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     .footer__newsletter-title {
         font-size: 24px;
     }
+
+    .footer__newsletter-input {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+
+    .btn-black {
+        font-size: 12px;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    .footer {
+        padding: 30px 0 15px;
+    }
+
+    .footer__top,
+    .footer__contacts,
+    .footer__newsletter,
+    .footer__bottom {
+        width: 95%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .footer__logo img {
+        max-width: 130px;
+    }
+
+    .footer__newsletter-title {
+        font-size: 20px;
+    }
+
+    .phone-item a {
+        font-size: 13px;
+    }
+
+    .address-item p,
+    .address-item a {
+        font-size: 11px;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.footer {
+    overflow-x: hidden;
+}
+
+.footer img {
+    height: auto;
 }
