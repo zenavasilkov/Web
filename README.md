@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![Figma](https://img.shields.io/badge/Figma-Design-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/design/OzNtjv4jsuCSxQmYqpZzDt/Untitled?node-id=0-1&p=f&t=I6zizD41kwNpQlyc-0)
+[![Figma](https://img.shields.io/badge/Figma-Design-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/design/zCdCLBYoBHzcMhzmA00EbK/Untitled?node-id=0-1&p=f&t=DF30m2WOMVolQnac-0)
 [![Live Demo](https://img.shields.io/badge/Live-Demo-0077B5?style=for-the-badge&logo=githubpages&logoColor=white)](https://zenavasilkov.github.io/Web/)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](#)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](#)
