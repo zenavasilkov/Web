@@ -1,0 +1,23 @@
+﻿.hero-banners {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.full-width-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.main-title-section {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.huge-logo-img {
+    display: block;
+    max-width: 980px;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}

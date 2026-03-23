@@ -1,0 +1,11 @@
+﻿:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --hse-blue: #0f2d6b;
+    --banner-purple: #cdd1e4;
+    --banner-orange: #eb9f6a;
+    --banner-gray: #e6e7e9;
+    --font-main: 'Inter', sans-serif;
+    --font-head: 'Oswald', sans-serif;
+    --container-width: 1200px;
+}

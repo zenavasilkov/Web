@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог программ - HSE Art and Design School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/catalog.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header__top">
+            <img src="images/HSE_UNIVERSITY_ART_AND_DESIGN.png" height="30" width="270" alt="HSE University Art and Design" class="header__logo">
+            <div class="header__actions">
+                <a href="index.html" class="btn-black">← На главную</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="catalog-section">
+        <div class="container">
+            <h1 class="catalog-title">КАТАЛОГ ОБРАЗОВАТЕЛЬНЫХ ПРОГРАММ</h1>
+
+            <div class="catalog-controls">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Поиск программ по названию или описанию..." class="search-input">
+                </div>
+
+                <div class="filter-box">
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="all">Все категории</option>
+                        <option value="design">Дизайн</option>
+                        <option value="art">Искусство</option>
+                        <option value="tech">Технологии</option>
+                        <option value="media">Медиа</option>
+                    </select>
+                </div>
+
+                <div class="sort-box">
+                    <select id="sortSelect" class="sort-select">
+                        <option value="default">По умолчанию</option>
+                        <option value="price-asc">Цена: по возрастанию</option>
+                        <option value="price-desc">Цена: по убыванию</option>
+                        <option value="name-asc">Название: А-Я</option>
+                        <option value="name-desc">Название: Я-А</option>
+                        <option value="rating">По рейтингу</option>
+                        <option value="duration">По длительности</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="array-methods">
+                <h2 class="methods-title">Методы обработки данных</h2>
+                <div class="methods-grid">
+                    <button class="method-btn" data-method="filter-expensive">💰 Дорогие (>50000₽)</button>
+                    <button class="method-btn" data-method="filter-cheap">💵 Доступные (<30000₽)</button>
+                    <button class="method-btn" data-method="map-names">📝 Только названия</button>
+                    <button class="method-btn" data-method="map-prices">💶 Только цены</button>
+                    <button class="method-btn" data-method="sort-by-rating">⭐ По рейтингу</button>
+                    <button class="method-btn" data-method="sort-by-duration">⏱️ По длительности</button>
+                    <button class="method-btn" data-method="reduce-total">📊 Общая стоимость</button>
+                    <button class="method-btn" data-method="reduce-average">📈 Средний рейтинг</button>
+                    <button class="method-btn" data-method="find-program">🔍 Найти программу</button>
+                    <button class="method-btn" data-method="some-long">⚡ Длительные >6 мес</button>
+                </div>
+                <div id="methodResult" class="method-result"></div>
+            </div>
+
+            <div id="catalogContainer" class="catalog-grid"></div>
+
+            <div id="noResults" class="no-results" style="display: none;">
+                <h3>😕 Программы не найдены</h3>
+                <p>Попробуйте изменить параметры поиска или фильтрации</p>
+            </div>
+
+            <div class="catalog-stats">
+                <p>Всего программ: <span id="totalCount">0</span></p>
+                <p>Показано: <span id="shownCount">0</span></p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__bottom">
+            <div class="footer__copyright">
+                © 1993–2022 Национальный исследовательский университет «Высшая школа экономики»
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/catalog-data.js"></script>
+<script src="js/catalog.js"></script>
+
+</body>
+</html>

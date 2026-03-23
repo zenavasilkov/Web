@@ -1,0 +1,235 @@
+﻿@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.program-item,
+.news-item,
+.resource-item {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.program-item:nth-child(1) { animation-delay: 0.05s; }
+.program-item:nth-child(2) { animation-delay: 0.1s; }
+.program-item:nth-child(3) { animation-delay: 0.15s; }
+
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.banner-card__image--orange {
+    background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+.resource-item,
+.news-item {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.resource-item:hover,
+.news-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.news-item__image img,
+.resource-item__image img {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.news-item__image:hover img,
+.resource-item__image:hover img {
+    transform: scale(1.1);
+}
+
+@keyframes rotatePhone {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.header-icon:hover {
+    animation: rotatePhone 0.8s ease-in-out;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.footer__badge {
+    animation: blink 3s ease-in-out infinite;
+}
+
+@keyframes blurIn {
+    from {
+        filter: blur(10px);
+        opacity: 0;
+    }
+    to {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.carousel__slide--center {
+    animation: blurIn 0.8s ease-out;
+}
+
+.program-item {
+    position: relative;
+    transition: color 0.3s ease-in;
+}
+
+.program-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #0f2d6b;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.program-item:hover::before {
+    width: 100%;
+}
+
+@keyframes slidePulse {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+}
+
+.carousel__arrow--right:hover {
+    animation: slidePulse 0.6s ease-in-out;
+}
+
+.carousel__arrow--left:hover {
+    animation: slidePulse 0.6s ease-in-out reverse;
+}
+
+.nav__list a {
+    position: relative;
+}
+
+.nav__list a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #0f2d6b;
+    transition: width 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav__list a:hover::after {
+    width: 100%;
+}
+
+@keyframes socialPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+.social-link {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .header__nav {
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .header__nav--open {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.footer__newsletter-input {
+    transition: all 0.3s ease-in-out;
+}
+
+.footer__newsletter-input:focus {
+    border-width: 3px;
+    border-color: #0f2d6b;
+    box-shadow: 0 0 20px rgba(15, 45, 107, 0.3);
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+.banner-card {
+    transition: transform 0.4s ease;
+}
+
+.banner-card:hover {
+    transform: skew(-5deg) scale(1.02);
+}
+
+.banner-card__image {
+    transition: transform 0.6s ease-out;
+}
+
+.banner-card:hover .banner-card__image {
+    transform: translateY(-10px);
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-banners,
+.main-title-section,
+.carousel-section {
+    animation: pageLoad 0.8s ease-out backwards;
+}
+
+.main-title-section { animation-delay: 0.1s; }
+.carousel-section { animation-delay: 0.2s; }
+
+@media (max-width: 768px) {
+    .banner-card:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -1,0 +1,121 @@
+﻿.section-title {
+    font-family: Roboto, sans-serif;
+    font-size: 57px;
+    font-weight: 400;
+    text-transform: uppercase;
+    width: 85%;
+    margin: 0 auto 20px auto;
+    color: var(--text-color);
+}
+
+.programs-list {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin: 0 auto 30px auto;
+}
+
+.program-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #000;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.program-item:hover {
+    padding-left: 10px;
+    color: var(--hse-blue);
+}
+
+.program-item--highlight {
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.program-item--highlight:hover {
+    color: #1b5e20;
+}
+
+.program-item--blue {
+    color: #0050FC;
+}
+
+.program-item--blue:hover {
+    color: #0a1f44;
+}
+
+@media (max-width: 1200px) {
+    .programs-section {
+        padding: 30px 0;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    .program-item {
+        font-size: 15px;
+        padding: 12px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .programs-section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .program-item {
+        font-size: 12px;
+        padding: 12px 0;
+    }
+
+    .school-description__actions .btn-outline {
+        display: none;
+    }
+
+    .school-description__actions .social-icons {
+        display: none;
+    }
+
+    .school-description__actions {
+        justify-content: flex-start;
+    }
+
+    .school-description__actions .btn-black {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 20px;
+        width: 95%;
+    }
+
+    .programs-list {
+        width: 95%;
+    }
+
+    .program-item {
+        font-size: 11px;
+        padding: 10px 0;
+    }
+
+    .school-description__actions {
+        width: 95%;
+    }
+
+    .school-description__actions .btn-black {
+        width: 100%;
+        text-align: center;
+    }
+}
