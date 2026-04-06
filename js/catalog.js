@@ -139,11 +139,15 @@ function handleArrayMethod(method) {
             renderCatalog(expensive);
             break;
 
-        case 'filter-cheap':
-            const cheap = programsData.filter(p => p.price < 30000);
-            result = `<h4>💵 Доступные программы (<30000₽): ${cheap.length} шт.</h4>
-                     <ul>${cheap.map(p => `<li>${p.name} - ${p.price.toLocaleString()}₽</li>`).join('')}</ul>`;
-            renderCatalog(cheap);
+        case 'with-highlights':
+            const withHighlights = programsData.flatMap(p => {
+                if (p.rating >= 4.7) {
+                    return [{ ...p, isHighlighted: true }];
+                }
+                return [p];
+            });
+            result = `<h4>⭐ Программы с выделением (рейтинг ≥4.7)</h4>`;
+            renderCatalog(withHighlights);
             break;
 
         case 'map-names':
@@ -152,10 +156,12 @@ function handleArrayMethod(method) {
                      <ul>${names.map(n => `<li>${n}</li>`).join('')}</ul>`;
             break;
 
-        case 'map-prices':
-            const prices = programsData.map(p => `${p.name}: ${p.price.toLocaleString()}₽`);
-            result = `<h4>💶 Цены всех программ:</h4>
-                     <ul>${prices.map(p => `<li>${p}</li>`).join('')}</ul>`;
+        case 'all-premium':
+            const allPremium = programsData.every(p => p.level !== 'beginner')
+                ? programsData
+                : programsData.filter(p => p.level === 'premium' || p.level === 'advanced');
+            result = `<h4>✨ Премиум-программы: ${allPremium.length} шт.</h4>`;
+            renderCatalog(allPremium);
             break;
 
         case 'sort-by-rating':
@@ -165,11 +171,10 @@ function handleArrayMethod(method) {
             renderCatalog(byRating);
             break;
 
-        case 'sort-by-duration':
-            const byDuration = [...programsData].sort((a, b) => b.duration - a.duration);
-            result = `<h4>⏱️ Программы по длительности:</h4>
-                     <ul>${byDuration.map(p => `<li>${p.name} - ${p.duration} ${p.durationUnit}</li>`).join('')}</ul>`;
-            renderCatalog(byDuration);
+        case 'reverse-order':
+            const reversed = programsData.toReversed();
+            result = `<h4>🔁 Каталог в обратном порядке</h4>`;
+            renderCatalog(reversed);
             break;
 
         case 'reduce-total':
@@ -179,10 +184,11 @@ function handleArrayMethod(method) {
                      <p>Средняя стоимость: ${(total / programsData.length).toLocaleString('ru-RU')} ₽</p>`;
             break;
 
-        case 'reduce-average':
-            const avgRating = programsData.reduce((sum, p) => sum + p.rating, 0) / programsData.length;
-            result = `<h4>📈 Средний рейтинг всех программ:</h4>
-                     <p class="highlight">${avgRating.toFixed(2)} ⭐</p>`;
+        case 'from-top-rated':
+            const startIndex = programsData.findIndex(p => p.rating >= 4.5);
+            const fromTop = startIndex !== -1 ? programsData.slice(startIndex) : [];
+            result = `<h4>🚀 Программы с рейтингом ≥4.5 (начиная с индекса ${startIndex}): ${fromTop.length} шт.</h4>`;
+            renderCatalog(fromTop);
             break;
 
         case 'find-program':
