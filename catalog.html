@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/catalog.css">
 </head>
 <body>
@@ -17,7 +19,9 @@
         <div class="header__top">
             <img src="images/HSE_UNIVERSITY_ART_AND_DESIGN.png" height="30" width="270" alt="HSE University Art and Design" class="header__logo">
             <div class="header__actions">
-                <a href="index.html" class="btn-black">← На главную</a>
+                <a href="index.html" class="btn-black header_to_main_button">← <span class="header__actions_text">&nbspНа главную</span></a>
+                <a href="favorites.html" class="btn-outline">❤️ <span class="header__actions_text">Избранное</span> (<span id="favoritesCount">0</span>)</a>
+                <a href="cart.html" class="btn-outline">🛒 <span class="header__actions_text">Корзина</span> (<span id="cartCount">0</span>)</a>
             </div>
         </div>
     </div>
@@ -30,7 +34,7 @@
 
             <div class="catalog-controls">
                 <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Поиск программ по названию или описанию..." class="search-input">
+                    <input type="text" id="searchInput" placeholder="Поиск программ..." class="search-input">
                 </div>
 
                 <div class="filter-box">
@@ -46,32 +50,37 @@
                 <div class="sort-box">
                     <select id="sortSelect" class="sort-select">
                         <option value="default">По умолчанию</option>
-                        <option value="price-asc">Цена: по возрастанию</option>
-                        <option value="price-desc">Цена: по убыванию</option>
-                        <option value="name-asc">Название: А-Я</option>
-                        <option value="name-desc">Название: Я-А</option>
-                        <option value="rating">По рейтингу</option>
-                        <option value="duration">По длительности</option>
                     </select>
                 </div>
             </div>
 
-            <div class="array-methods">
-                <h2 class="methods-title">Методы обработки данных</h2>
-                <div class="methods-grid">
-                    <button class="method-btn" data-method="filter-expensive">💰 Дорогие (>50000₽)</button>
-                    <button class="method-btn" data-method="with-highlights">⭐ С выделением (≥4.7⭐)</button>
-                    <button class="method-btn" data-method="map-names">📝 Только названия</button>
-                    <button class="method-btn" data-method="all-premium">✨ Все премиум</button>
-                    <button class="method-btn" data-method="sort-by-rating">📊 По рейтингу</button>
-                    <button class="method-btn" data-method="reverse-order">🔁 Обратный порядок</button>
-                    <button class="method-btn" data-method="reduce-total">💶 Общая стоимость</button>
-                    <button class="method-btn" data-method="from-top-rated">🚀 От 4.5⭐ и выше</button>
-                    <button class="method-btn" data-method="find-program">🔍 Найти 4.9⭐</button>
-                    <button class="method-btn" data-method="some-long">⚡ Есть >6 мес?</button>
+            <div class="advanced-filters">
+                <h3 class="filters-title">Расширенные фильтры</h3>
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label>Цена от (₽):</label>
+                        <input type="number" id="priceMin" placeholder="0" class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <label>Цена до (₽):</label>
+                        <input type="number" id="priceMax" placeholder="500000" class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <label>Рейтинг от:</label>
+                        <input type="number" id="ratingMin" placeholder="0" step="0.1" max="5" class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <label>Длительность от (мес):</label>
+                        <input type="number" id="durationMin" placeholder="0" class="filter-input">
+                    </div>
                 </div>
-                </div>
-                <div id="methodResult" class="method-result"></div>
+                <button id="resetFilters" class="btn-reset">Сбросить фильтры</button>
+            </div>
+
+            <div class="pagination-controls">
+                <button id="prevPage" class="pagination-btn" disabled>← Назад</button>
+                <span class="pagination-info">Страница <span id="currentPage">1</span> из <span id="totalPages">1</span></span>
+                <button id="nextPage" class="pagination-btn">Вперёд →</button>
             </div>
 
             <div id="catalogContainer" class="catalog-grid"></div>
@@ -79,6 +88,11 @@
             <div id="noResults" class="no-results" style="display: none;">
                 <h3>😕 Программы не найдены</h3>
                 <p>Попробуйте изменить параметры поиска или фильтрации</p>
+            </div>
+
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Загрузка программ...</p>
             </div>
 
             <div class="catalog-stats">
@@ -99,7 +113,7 @@
     </div>
 </footer>
 
-<script src="js/catalog-data.js"></script>
+<script src="js/api.js"></script>
 <script src="js/catalog.js"></script>
 
 </body>

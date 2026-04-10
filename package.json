@@ -1,0 +1,16 @@
+{
+  "name": "hse-design-school-catalog",
+  "version": "1.0.0",
+  "description": "HSE Design School Catalog - Lab Work #7",
+  "main": "index.js",
+  "scripts": {
+    "server": "json-server --watch db.json --port 3000",
+    "start": "npm run server"
+  },
+  "keywords": ["hse", "design", "catalog", "json-server"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "json-server": "^0.17.4"
+  }
+}

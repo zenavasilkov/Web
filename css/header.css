@@ -17,6 +17,8 @@
 .header__actions {
     display: flex;
     align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
     gap: 20px;
     font-size: 13px;
     font-weight: 600;
@@ -305,5 +307,9 @@
 
     #header-button {
         display: none;
+    }
+
+    .header_to_main_button {
+        padding: 5px !important;
     }
 }
