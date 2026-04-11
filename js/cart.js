@@ -132,4 +132,47 @@ checkoutBtn.addEventListener('click', async () => {
     }
 });
 
+async function saveOrder() {
+    try {
+        const cart = await API.getCart();
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+        if (!currentUser) {
+            alert('⚠️ Для оформления заказа необходимо авторизоваться');
+            window.location.href = 'login.html';
+            return;
+        }
+
+        for (const item of cart) {
+            await fetch(`${API_BASE_URL}/orders`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    userId: currentUser.id,
+                    programId: item.programId,
+                    quantity: item.quantity,
+                    totalPrice: item.price * item.quantity,
+                    status: 'completed',
+                    createdAt: new Date().toISOString()
+                })
+            });
+        }
+
+        await API.clearCart();
+
+        alert('✅ Заказ успешно оформлен! Спасибо за покупку.');
+        loadCart();
+
+    } catch (error) {
+        console.error('Ошибка оформления заказа:', error);
+        alert('❌ Ошибка при оформлении заказа');
+    }
+}
+
+checkoutBtn.addEventListener('click', async () => {
+    if (confirm('Оформить покупку? После подтверждения корзина будет очищена.')) {
+        await saveOrder();
+    }
+});
+
 document.addEventListener('DOMContentLoaded', loadCart);

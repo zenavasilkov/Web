@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы - HSE Art and Design School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/feedback.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header__top">
+            <img src="images/HSE_UNIVERSITY_ART_AND_DESIGN.png" height="30" width="270" alt="HSE University Art and Design" class="header__logo">
+            <div class="header__actions">
+                <a href="index.html" class="btn-black">← На главную</a>
+                <a href="catalog.html" class="btn-outline">📚 КАТАЛОГ</a>
+                <a href="cart.html" class="btn-outline">🛒 КОРЗИНА</a>
+                <a href="#" class="btn-outline" id="logoutBtn">🚪 ВЫЙТИ</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="feedback-section">
+        <div class="container">
+            <h1 class="feedback-title">ОСТАВИТЬ ОТЗЫВ</h1>
+
+            <form id="feedbackForm" class="feedback-form" novalidate>
+                <div class="form-group">
+                    <label for="programSelect" class="form-label">
+                        Выберите программу <span class="required">*</span>
+                    </label>
+                    <select id="programSelect" name="programSelect" class="form-input" required>
+                        <option value="">-- Выберите программу --</option>
+                    </select>
+                    <span class="error-message" id="programSelectError"></span>
+                    <p class="hint">Только купленные программы</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedbackText" class="form-label">
+                        Ваш отзыв <span class="required">*</span>
+                    </label>
+                    <textarea
+                            id="feedbackText"
+                            name="feedbackText"
+                            class="form-input"
+                            rows="6"
+                            placeholder="Расскажите о вашем опыте обучения (минимум 50 символов)..."
+                            required
+                    ></textarea>
+                    <div class="char-counter">
+                        <span id="charCount">0</span> / 50 (минимум)
+                    </div>
+                    <span class="error-message" id="feedbackTextError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        Оценка <span class="required">*</span>
+                    </label>
+                    <div class="rating-input">
+                        <input type="radio" id="star5" name="rating" value="5" required>
+                        <label for="star5">⭐</label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4">⭐</label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3">⭐</label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2">⭐</label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1">⭐</label>
+                    </div>
+                    <span class="error-message" id="ratingError"></span>
+                </div>
+
+                <button type="submit" class="btn-submit" id="feedbackSubmitBtn" disabled>
+                    Отправить отзыв
+                </button>
+            </form>
+
+            <div class="feedback-list" id="feedbackList">
+                <h2 class="feedback-list-title">Все отзывы</h2>
+                <div id="feedbackContainer"></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__bottom">
+            <div class="footer__copyright">
+                © 1993–2022 Национальный исследовательский университет «Высшая школа экономики»
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/feedback.js"></script>
+</body>
+</html>

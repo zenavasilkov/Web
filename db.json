@@ -211,12 +211,66 @@
       "language": "Русский"
     }
   ],
-  "favorites": [
+  "favorites": [],
+  "cart": [],
+  "users": [
     {
-      "programId": 5,
-      "addedAt": "2026-04-10T19:46:59.805Z",
+      "id": 1,
+      "phone": "+375291234567",
+      "email": "admin@hse.by",
+      "password": "c32995775e936231b5ec47a1a97b5462fc3465675295d5177303535e7a099256",
+      "dateOfBirth": "1990-05-15",
+      "firstName": "Админ",
+      "lastName": "Админов",
+      "patronymic": "Админович",
+      "nickname": "AdminHSE123",
+      "role": "admin",
+      "agreementAccepted": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "phone": "375298483798",
+      "email": "zenavasilkov6@gmail.com",
+      "password": "c32995775e936231b5ec47a1a97b5462fc3465675295d5177303535e7a099256",
+      "dateOfBirth": "2007-07-19",
+      "firstName": "Aleksander",
+      "lastName": "Shkrebnev",
+      "patronymic": "",
+      "nickname": "as9250the",
+      "role": "user",
+      "agreementAccepted": true,
+      "createdAt": "2026-04-11T15:08:17.882Z",
+      "id": 2
+    }
+  ],
+  "feedback": [
+    {
+      "userId": 2,
+      "programId": 1,
+      "text": "Программа «Коммуникационный дизайн» превзошла все мои ожидания! За время обучения я освоил не только теоретические основы визуальных коммуникаций, но и получил практические навыки работы с современными инструментами дизайна. Преподаватели — настоящие профессионалы, которые всегда готовы помочь и дать ценный фидбек. Особенно понравился проект по разработке айдентики для реального бренда. Рекомендую всем, кто хочет развиваться в сфере дизайна!",
+      "rating": 5,
+      "createdAt": "2026-04-11T16:03:00.946Z",
       "id": 1
     }
   ],
-  "cart": []
+  "orders": [
+    {
+      "userId": 2,
+      "programId": 3,
+      "quantity": 1,
+      "totalPrice": 380000,
+      "status": "completed",
+      "createdAt": "2026-04-11T15:10:04.112Z",
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "programId": 1,
+      "quantity": 1,
+      "totalPrice": 350000,
+      "status": "completed",
+      "createdAt": "2026-04-11T15:34:42.082Z",
+      "id": 2
+    }
+  ]
 }

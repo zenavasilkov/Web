@@ -1,0 +1,316 @@
+.feedback-section {
+    padding: 80px 0;
+    min-height: 80vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.feedback-title {
+    font-family: var(--font-head, 'Oswald', sans-serif);
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #0f2d6b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    padding: 50px 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feedback-form:hover {
+    transform: translateY(-5px);
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #0f2d6b;
+}
+
+.required {
+    color: #dc3545;
+    margin-left: 2px;
+}
+
+.form-input,
+.form-input textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: var(--font-main, 'Inter', sans-serif);
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.form-input:focus,
+.form-input textarea:focus {
+    outline: none;
+    border-color: #0f2d6b;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(15, 45, 107, 0.1);
+}
+
+.form-input select {
+    cursor: pointer;
+}
+
+.form-input select:disabled {
+    background: #f5f5f5;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.form-input textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.6;
+}
+
+.char-counter {
+    font-size: 13px;
+    color: #666;
+    text-align: right;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.rating-input {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 10px 0;
+}
+
+.rating-input input[type="radio"] {
+    display: none;
+}
+
+.rating-input label {
+    font-size: 40px;
+    cursor: pointer;
+    color: #ddd;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+}
+
+.rating-input label:hover,
+.rating-input label:hover ~ label,
+.rating-input input[type="radio"]:checked ~ label {
+    color: #ffc107;
+    transform: scale(1.1);
+}
+
+.hint {
+    font-size: 13px;
+    color: #666;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 18px 32px;
+    background: linear-gradient(135deg, #0f2d6b 0%, #1a4a8d 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(15, 45, 107, 0.3);
+}
+
+.btn-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15, 45, 107, 0.4);
+}
+
+.btn-submit:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: none;
+}
+
+.feedback-list {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-list-title {
+    font-family: var(--font-head, 'Oswald', sans-serif);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #0f2d6b;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #0f2d6b;
+}
+
+#feedbackContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.feedback-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-left: 5px solid #0f2d6b;
+}
+
+.feedback-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.feedback-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.feedback-card__author {
+    font-weight: 700;
+    font-size: 18px;
+    color: #0f2d6b;
+    margin-bottom: 5px;
+}
+
+.feedback-card__program {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+}
+
+.feedback-card__rating {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.feedback-card__text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    border-left: 3px solid #ffc107;
+}
+
+.feedback-card__date {
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+}
+
+.no-feedback {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 18px;
+    color: #666;
+    font-style: italic;
+}
+
+.error-message {
+    display: block;
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .feedback-section {
+        padding: 50px 0;
+    }
+
+    .feedback-form,
+    .feedback-list {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+
+    .feedback-title {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .rating-input {
+        justify-content: center;
+    }
+
+    .rating-input label {
+        font-size: 32px;
+    }
+
+    .feedback-card__header {
+        flex-direction: column;
+    }
+
+    .feedback-card__rating {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .feedback-form,
+    .feedback-list {
+        padding: 20px 15px;
+    }
+
+    .feedback-title {
+        font-size: 28px;
+    }
+
+    .form-label {
+        font-size: 14px;
+    }
+
+    .form-input,
+    .form-input textarea {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .btn-submit {
+        padding: 16px 24px;
+        font-size: 15px;
+    }
+
+    .rating-input label {
+        font-size: 28px;
+    }
+}

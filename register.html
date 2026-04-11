@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - HSE Art and Design School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header__top">
+            <img src="images/HSE_UNIVERSITY_ART_AND_DESIGN.png" height="30" width="270" alt="HSE University Art and Design" class="header__logo">
+            <div class="header__actions">
+                <a href="index.html" class="btn-black">← На главную</a>
+                <a href="catalog.html" class="btn-outline">📚 КАТАЛОГ</a>
+                <a href="login.html" class="btn-outline">🔐 ВОЙТИ</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="auth-section">
+        <div class="container">
+            <h1 class="auth-title">РЕГИСТРАЦИЯ</h1>
+
+            <form id="registerForm" class="auth-form" novalidate>
+                <div class="form-group">
+                    <label for="phone" class="form-label">
+                        Номер телефона <span class="required">*</span>
+                    </label>
+                    <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            class="form-input"
+                            placeholder="+375 (__) ___-__-__"
+                            required
+                            autocomplete="tel"
+                    >
+                    <span class="error-message" id="phoneError"></span>
+                    <span class="success-message" id="phoneSuccess"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        Email <span class="required">*</span>
+                    </label>
+                    <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-input"
+                            placeholder="example@domain.com"
+                            required
+                            autocomplete="email"
+                    >
+                    <span class="error-message" id="emailError"></span>
+                    <span class="success-message" id="emailSuccess"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="dateOfBirth" class="form-label">
+                        Дата рождения <span class="required">*</span>
+                    </label>
+                    <input
+                            type="date"
+                            id="dateOfBirth"
+                            name="dateOfBirth"
+                            class="form-input"
+                            required
+                    >
+                    <span class="error-message" id="dateOfBirthError"></span>
+                    <span class="success-message" id="dateOfBirthSuccess"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Способ задания пароля <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input
+                                    type="radio"
+                                    name="passwordMethod"
+                                    value="manual"
+                                    checked
+                            >
+                            Ввести самостоятельно
+                        </label>
+                        <label class="radio-label">
+                            <input
+                                    type="radio"
+                                    name="passwordMethod"
+                                    value="auto"
+                            >
+                            Сгенерировать автоматически
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group" id="passwordManualGroup">
+                    <label for="password" class="form-label">
+                        Пароль <span class="required">*</span>
+                    </label>
+                    <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="form-input"
+                            placeholder="Минимум 8 символов"
+                            autocomplete="new-password"
+                    >
+                    <div class="password-requirements" id="passwordRequirements">
+                        <p class="req-item" id="req-length">8-20 символов</p>
+                        <p class="req-item" id="req-uppercase">Одна заглавная буква</p>
+                        <p class="req-item" id="req-lowercase">Одна строчная буква</p>
+                        <p class="req-item" id="req-number">Одна цифра</p>
+                        <p class="req-item" id="req-special">Один специальный символ</p>
+                        <p class="req-item" id="req-common">Не из TOP-100 паролей</p>
+                    </div>
+                    <span class="error-message" id="passwordError"></span>
+                    <span class="success-message" id="passwordSuccess"></span>
+                </div>
+
+                <div class="form-group" id="passwordRepeatGroup">
+                    <label for="passwordRepeat" class="form-label">
+                        Повторите пароль <span class="required">*</span>
+                    </label>
+                    <input
+                            type="password"
+                            id="passwordRepeat"
+                            name="passwordRepeat"
+                            class="form-input"
+                            placeholder="Повторите пароль"
+                            autocomplete="new-password"
+                    >
+                    <span class="error-message" id="passwordRepeatError"></span>
+                    <span class="success-message" id="passwordRepeatSuccess"></span>
+                </div>
+
+                <div class="form-group" id="passwordAutoGroup" style="display: none;">
+                    <label class="form-label">Сгенерированный пароль</label>
+                    <div class="auto-password-display">
+                        <input
+                                type="text"
+                                id="autoPassword"
+                                class="form-input"
+                                readonly
+                        >
+                        <button type="button" class="btn-regenerate" id="regenerateBtn">🔄 Сгенерировать</button>
+                    </div>
+                    <p class="hint">Сохраните этот пароль в безопасном месте</p>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName" class="form-label">
+                            Имя <span class="required">*</span>
+                        </label>
+                        <input
+                                type="text"
+                                id="firstName"
+                                name="firstName"
+                                class="form-input"
+                                placeholder="Иван"
+                                required
+                                autocomplete="given-name"
+                        >
+                        <span class="error-message" id="firstNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName" class="form-label">
+                            Фамилия <span class="required">*</span>
+                        </label>
+                        <input
+                                type="text"
+                                id="lastName"
+                                name="lastName"
+                                class="form-input"
+                                placeholder="Иванов"
+                                required
+                                autocomplete="family-name"
+                        >
+                        <span class="error-message" id="lastNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patronymic" class="form-label">
+                            Отчество <span class="optional">(необязательно)</span>
+                        </label>
+                        <input
+                                type="text"
+                                id="patronymic"
+                                name="patronymic"
+                                class="form-input"
+                                placeholder="Иванович"
+                                autocomplete="additional-name"
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="nickname" class="form-label">
+                        Никнейм <span class="required">*</span>
+                    </label>
+                    <div class="nickname-group">
+                        <input
+                                type="text"
+                                id="nickname"
+                                name="nickname"
+                                class="form-input"
+                                placeholder="nickname123"
+                                required
+                                readonly
+                        >
+                        <button type="button" class="btn-generate" id="generateNicknameBtn">🔄 Сгенерировать</button>
+                    </div>
+                    <p class="hint" id="nicknameAttempts">Попыток генерации: 0/5</p>
+                    <span class="error-message" id="nicknameError"></span>
+                    <span class="success-message" id="nicknameSuccess"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input
+                                type="checkbox"
+                                id="agreement"
+                                name="agreement"
+                                required
+                        >
+                        <span class="checkbox-text">
+                            Я прочитал(а) и принимаю
+                            <a href="#" class="link">Соглашение пользователя</a>
+                            <span class="required">*</span>
+                        </span>
+                    </label>
+                    <span class="error-message" id="agreementError"></span>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn" disabled>
+                    Зарегистрироваться
+                </button>
+
+                <p class="auth-link">
+                    Уже есть аккаунт? <a href="login.html">Войти</a>
+                </p>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__bottom">
+            <div class="footer__copyright">
+                © 1993–2022 Национальный исследовательский университет «Высшая школа экономики»
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/auth.js"></script>
+
+</body>
+</html>
