@@ -51,11 +51,16 @@
         <div class="header__top">
             <img src="images/HSE_UNIVERSITY_ART_AND_DESIGN.png" height="30" width="270" alt="HSE University Art and Design" class="header__logo">
             <div class="header__actions">
-                <a href="#" class="lang-switch">EN</a>
-                <a href="#" class="lang-switch">中文</a>
-                <img src="images/dial.png" alt="Позвонить" class="header-icon">
-                <a href="#" id="header-button" class="btn-black">Как поступить</a>
+                <a href="#" class="lang-switch" data-lang="ru" data-i18n="lang-ru">RU</a>
+                <a href="#" class="lang-switch" data-lang="en" data-i18n="lang-en">EN</a>
 
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <span class="theme-icon sun">☀️</span>
+                    <span class="theme-icon moon">🌙</span>
+                </button>
+
+                <img src="images/dial.png" alt="Позвонить" class="header-icon" data-i18n-alt="header-phone-alt">
+                <a href="#" id="header-button" class="btn-black" data-i18n="header-apply">Как поступить</a>
                 <button class="header__burger" aria-label="Меню">
                     <span></span>
                     <span></span>
@@ -66,28 +71,28 @@
 
         <nav class="header__nav">
             <ul class="nav__list">
-                <li><a href="#programs">Бакалавриат</a></li>
-                <li><a href="#programs">Магистратура</a></li>
-                <li><a href="#programs">ДПО</a></li>
-                <li><a href="#programs">Аспирантура</a></li>
-                <li><a href="#programs">Microdegree</a></li>
-                <li><a href="#">Студенческое портфолио</a></li>
-                <li><a href="#about">Кампусы</a></li>
-                <li><a href="catalog.html">Все курсы</a></li>
+                <li><a href="#programs" data-i18n="nav-bachelor">Бакалавриат</a></li>
+                <li><a href="#programs" data-i18n="nav-master">Магистратура</a></li>
+                <li><a href="#programs" data-i18n="nav-dpo">ДПО</a></li>
+                <li><a href="#programs" data-i18n="nav-aspirant">Аспирантура</a></li>
+                <li><a href="#programs" data-i18n="nav-microdegree">Microdegree</a></li>
+                <li><a href="#" data-i18n="nav-portfolio">Студенческое портфолио</a></li>
+                <li><a href="#about" data-i18n="nav-campus">Кампусы</a></li>
+                <li><a href="catalog.html" data-i18n="nav-all-courses">Все курсы</a></li>
             </ul>
         </nav>
 
         <div class="header__sub-nav">
-            <a href="#about">О школе</a>
-            <a href="#" style="color: red;">Детская школа</a>
-            <a href="#">Поступающим</a>
-            <a href="#">Студентам</a>
-            <a href="#resources">Лаборатория дизайна</a>
-            <a href="#news">Новости</a>
-            <a href="#">Медиа</a>
-            <a href="#">Еще</a>
-            <a href="#">ALUMNI</a>
-            <a href="#">HSE ART GALLERY</a>
+            <a href="#about" data-i18n="subnav-about">О школе</a>
+            <a href="#" style="color: red;" data-i18n="subnav-kids">Детская школа</a>
+            <a href="#" data-i18n="subnav-applicants">Поступающим</a>
+            <a href="#" data-i18n="subnav-students">Студентам</a>
+            <a href="#resources" data-i18n="subnav-lab">Лаборатория дизайна</a>
+            <a href="#news" data-i18n="subnav-news">Новости</a>
+            <a href="#" data-i18n="subnav-media">Медиа</a>
+            <a href="#" data-i18n="subnav-more">Еще</a>
+            <a href="#" data-i18n="subnav-alumni">ALUMNI</a>
+            <a href="#" data-i18n="subnav-gallery">HSE ART GALLERY</a>
         </div>
     </div>
 </header>
@@ -100,12 +105,18 @@
                     <div class="swiper-slide">
                         <article class="banner-card">
                             <div class="banner-card__image">
-                                <img src="images/banner-1.PNG" alt="Дни открытых дверей 21 января — Бакалавриат Дизайн и Мода">
+                                <img
+                                        src="images/banner-1.PNG"
+                                        alt="Дни открытых дверей 21 января — Бакалавриат Дизайн и Мода"
+                                        data-light-theme="images/banner-1.png"
+                                        data-dark-theme="images/banner-1-dark.png"
+                                        class="theme-image"
+                                >
                             </div>
                             <div class="banner-card__content">
-                                <p class="banner-card__subtitle">Дни открытых дверей</p>
-                                <p class="banner-card__date">21 января | 12:00 — Бакалавриат<br>«Дизайн» и «Мода»</p>
-                                <a href="#" class="banner-card__link">Регистрация</a>
+                                <p class="banner-card__subtitle" data-i18n="banner-subtitle">Дни открытых дверей</p>
+                                <p class="banner-card__date" data-i18n="banner1-date">21 января | 12:00 — Бакалавриат</p>
+                                <a href="#" class="banner-card__link" data-i18n="banner-register">Регистрация</a>
                                 <span class="banner-card__big-date">21.01</span>
                             </div>
                         </article>
@@ -113,12 +124,19 @@
                     <div class="swiper-slide">
                         <article class="banner-card banner-card--orange">
                             <div class="banner-card__image">
-                                <img src="images/banner-2.png" alt="Дни открытых дверей 23 января — Магистратура">
+                                <img
+                                        src="images/banner-2.png"
+                                        id="img-banner-2"
+                                        alt="Дни открытых дверей 23 января — Магистратура"
+                                        data-light-theme="images/banner-2.png"
+                                        data-dark-theme="images/mask.jpg"
+                                        class="theme-image"
+                                >
                             </div>
                             <div class="banner-card__content">
-                                <p class="banner-card__subtitle">Дни открытых дверей</p>
-                                <p class="banner-card__date">23 января | 19:00 — Магистратура /<br>Дополнительное образование</p>
-                                <a href="#" class="banner-card__link">Регистрация</a>
+                                <p class="banner-card__subtitle" data-i18n="banner-subtitle">Дни открытых дверей</p>
+                                <p class="banner-card__date" data-i18n="banner2-date">23 января | 19:00 — Магистратура</p>
+                                <a href="#" class="banner-card__link" data-i18n="banner-register">Регистрация</a>
                                 <span class="banner-card__big-date">23.01</span>
                             </div>
                         </article>
@@ -126,12 +144,18 @@
                     <div class="swiper-slide">
                         <article class="banner-card">
                             <div class="banner-card__image">
-                                <img src="images/banner-3.PNG" alt="Дни открытых дверей 31 января — Современное искусство">
+                                <img
+                                        src="images/banner-3.PNG"
+                                        alt="Дни открытых дверей 31 января — Современное искусство"
+                                        data-light-theme="images/banner-3.png"
+                                        data-dark-theme="images/banner-3-dark.jpg"
+                                        class="theme-image"
+                                >
                             </div>
                             <div class="banner-card__content">
-                                <p class="banner-card__subtitle">Дни открытых дверей</p>
-                                <p class="banner-card__date">31 января | 18:00 — Бакалавриат<br>«Современное искусство»</p>
-                                <a href="#" class="banner-card__link">Регистрация</a>
+                                <p class="banner-card__subtitle" data-i18n="banner-subtitle">Дни открытых дверей</p>
+                                <p class="banner-card__date" data-i18n="banner3-date">31 января | 18:00 — Бакалавриат</p>
+                                <a href="#" class="banner-card__link" data-i18n="banner-register">Регистрация</a>
                                 <span class="banner-card__big-date">31.01</span>
                             </div>
                         </article>
@@ -146,7 +170,7 @@
 
     <section class="main-title-section">
         <div class="container">
-            <img src="images/huge_logo.png" alt="HSE ART AND DESIGN SCHOOL" class="huge-logo-img">
+            <img src="images/huge_logo.png" alt="HSE ART AND DESIGN SCHOOL" class="huge-logo-img" data-i18n-alt="main-logo-alt">
         </div>
     </section>
 
@@ -155,13 +179,13 @@
             <div class="carousel">
                 <div class="carousel__track">
                     <div class="carousel__slide carousel__slide--left active">
-                        <img src="images/left_second.png" alt="Предыдущее" class="carousel__image">
+                        <img src="images/left_second.png" alt="Предыдущее" class="carousel__image" data-i18n-alt="carousel-prev-alt">
                     </div>
                     <div class="carousel__slide carousel__slide--center active">
-                        <img src="images/center_second.png" alt="Иллюстрация студентов" class="carousel__image">
+                        <img src="images/center_second.png" alt="Иллюстрация студентов" class="carousel__image" data-i18n-alt="carousel-center-alt">
                     </div>
                     <div class="carousel__slide carousel__slide--right active">
-                        <img src="images/right_second.png" alt="Подготовительные курсы" class="carousel__image">
+                        <img src="images/right_second.png" alt="Подготовительные курсы" class="carousel__image" data-i18n-alt="carousel-next-alt">
                     </div>
                 </div>
             </div>
@@ -170,12 +194,12 @@
 
     <section class="school-description">
         <div class="container">
-            <p class="school-description__text">
+            <p class="school-description__text" data-i18n="school-desc-1">
                 Школа дизайна — подразделение одного из ведущих российских университетов — Высшей школы экономики, входящей в список
                 40 лучших молодых университетов мира и в топ-100 мировых вузов направления Arts & Humanities
                 по версии престижного международного рейтинга QS-2022.
             </p>
-            <p class="school-description__subtitle">
+            <p class="school-description__subtitle" data-i18n="school-desc-2">
                 В Школе дизайна НИУ ВШЭ открыты программы бакалавриата, магистратуры, аспирантуры, дополнительного образования,
                 а также детские курсы по более чем 15 образовательным направлениям. С 2020 года Школа дизайна предлагает также онлайн-обучение.
                 Наши выпускники — обладатели международных наград, сотрудники успешных компаний, высококлассные профессионалы в сферах дизайна,
@@ -183,12 +207,12 @@
                 анимации, саунд-арта и визуальных эффектов.
             </p>
             <div class="school-description__actions">
-                <button class="btn-black info-button">КАК ПОСТУПИТЬ</button>
-                <button class="btn-outline  info-button">ДНИ ОТКРЫТЫХ ДВЕРЕЙ</button>
+                <button class="btn-black" data-i18n="btn-apply">КАК ПОСТУПИТЬ</button>
+                <button class="btn-outline" data-i18n="btn-open-days">ДНИ ОТКРЫТЫХ ДВЕРЕЙ</button>
                 <div class="social-icons">
-                    <a href="#" class="social-icon"><img src="images/telegram.png" alt="Telegram"></a>
-                    <a href="#" class="social-icon"><img src="images/vk.png" alt="VK"></a>
-                    <a href="#" class="social-icon"><img src="images/youtube.png" alt="YouTube"></a>
+                    <a href="#" class="social-icon"><img src="images/telegram.png" alt="Telegram" data-i18n-alt="social-telegram"></a>
+                    <a href="#" class="social-icon"><img src="images/vk.png" alt="VK" data-i18n-alt="social-vk"></a>
+                    <a href="#" class="social-icon"><img src="images/youtube.png" alt="YouTube" data-i18n-alt="social-youtube"></a>
                 </div>
             </div>
         </div>
@@ -199,54 +223,54 @@
         <div class="parallax-layer parallax-layer--mid"></div>
         <div class="parallax-layer parallax-layer--front"></div>
         <div class="parallax-content">
-            <h2>ШКОЛА ДИЗАЙНА НИУ ВШЭ</h2>
-            <p>Создаем будущее дизайна вместе</p>
+            <h2 data-i18n="parallax-title">ШКОЛА ДИЗАЙНА НИУ ВШЭ</h2>
+            <p data-i18n="parallax-subtitle">Создаем будущее дизайна вместе</p>
         </div>
     </section>
 
     <section class="programs-section" id="programs">
         <div class="container">
-            <h2 class="section-title">НАПРАВЛЕНИЯ ОБУЧЕНИЯ</h2>
+            <h2 class="section-title" data-i18n="section-programs">НАПРАВЛЕНИЯ ОБУЧЕНИЯ</h2>
             <div class="programs-list">
-                <a href="#" class="program-item" data-program-id="1">КОММУНИКАЦИОННЫЙ ДИЗАЙН</a>
-                <a href="#" class="program-item" data-program-id="2">АНИМАЦИЯ И ИЛЛЮСТРАЦИЯ</a>
-                <a href="#" class="program-item" data-program-id="3">КОМИКС</a>
-                <a href="#" class="program-item" data-program-id="4">CGI И ВИЗУАЛЬНЫЕ ЭФФЕКТЫ</a>
-                <a href="#" class="program-item" data-program-id="5">3D-ПОСТПРОДАКШН</a>
-                <a href="#" class="program-item" data-program-id="6">ДИЗАЙН СРЕДЫ И ИНТЕРЬЕРА</a>
-                <a href="#" class="program-item" data-program-id="7">СОВРЕМЕННОЕ ИСКУССТВО</a>
-                <a href="#" class="program-item" data-program-id="8">ФИГУРАТИВНОЕ ИСКУССТВО</a>
-                <a href="#" class="program-item" data-program-id="9">МОДА</a>
-                <a href="#" class="program-item" data-program-id="10">ГЕЙМ-ДИЗАЙН</a>
-                <a href="#" class="program-item" data-program-id="11">ДИЗАЙН И ПРОГРАММИРОВАНИЕ</a>
-                <a href="#" class="program-item" data-program-id="12">ДИЗАЙН И ПРОДВИЖЕНИЕ</a>
-                <a href="#" class="program-item" data-program-id="13">ИВЕНТ-ДИЗАЙН. ТЕАТР. ПЕРФОМАНС</a>
-                <a href="#" class="program-item" data-program-id="14">ИСКУССТВО РЕКЛАМЫ</a>
-                <a href="#" class="program-item" data-program-id="15">МЕДИА И ДИЗАЙН</a>
-                <a href="#" class="program-item" data-program-id="16">ПРЕДМЕТНЫЙ И ПРОМЫШЛЕННЫЙ ДИЗАЙН</a>
-                <a href="#" class="program-item" data-program-id="17">САУНД-АРТ И САУНД-ДИЗАЙН</a>
-                <a href="#" class="program-item" data-program-id="18">ТЕРРИТОРИАЛЬНЫЙ БРЕНДИНГ И ДИЗАЙН ГОРОДСКОЙ СРЕДЫ</a>
-                <a href="#" class="program-item" data-program-id="19">ТИПОГРАФИКА И ДИЗАЙН КНИГИ</a>
-                <a href="#" class="program-item program-item--highlight" data-program-id="20">УПРАВЛЕНИЕ В КРЕАТИВНЫХ ИНДУСТРИЯХ</a>
-                <a href="#" class="program-item" data-program-id="21">ФОТОГРАФИЯ</a>
-                <a href="#" class="program-item" data-program-id="22">ЭКРАННЫЕ ИСКУССТВА</a>
-                <a href="#" class="program-item" data-program-id="23">ЮВЕЛИРНЫЙ ДИЗАЙН</a>
-                <a href="#" class="program-item program-item--blue" data-program-id="24">ОНЛАЙН-ОБУЧЕНИЕ В ШКОЛЕ ДИЗАЙНА</a>
-                <a href="#" class="program-item" data-program-id="25">ШКОЛА ДИЗАЙНА НИУ ВШЭ — САНКТ-ПЕТЕРБУРГ</a>
-                <a href="#" class="program-item" data-program-id="26">ШКОЛА ДИЗАЙНА НИУ ВШЭ — НИЖНИЙ НОВГОРОД</a>
-                <a href="#" class="program-item program-item--blue" data-program-id="27">ШКОЛА ДИЗАЙНА НИУ ВШЭ — ПЕРМЬ (ОНЛАЙН-БАКАЛАВРИАТ)</a>
-                <a href="#" class="program-item" data-program-id="28">HSE ART AND DESIGN SCHOOL INTERNATIONAL — ЕРЕВАН</a>
-                <a href="#" class="program-item" data-program-id="29">ФАКУЛЬТЕТ ДОВУЗОВСКОЙ ПОДГОТОВКИ</a>
-                <a href="#" class="program-item" data-program-id="30">ДОПОЛНИТЕЛЬНОЕ ОБРАЗОВАНИЕ</a>
-                <a href="#" class="program-item" data-program-id="31">ДЕТСКАЯ ШКОЛА ДИЗАЙНА</a>
+                <a href="#" class="program-item" data-i18n="prog-comm-design">КОММУНИКАЦИОННЫЙ ДИЗАЙН</a>
+                <a href="#" class="program-item" data-i18n="prog-animation">АНИМАЦИЯ И ИЛЛЮСТРАЦИЯ</a>
+                <a href="#" class="program-item" data-i18n="prog-comics">КОМИКС</a>
+                <a href="#" class="program-item" data-i18n="prog-cgi">CGI И ВИЗУАЛЬНЫЕ ЭФФЕКТЫ</a>
+                <a href="#" class="program-item" data-i18n="prog-3d">3D-ПОСТПРОДАКШН</a>
+                <a href="#" class="program-item" data-i18n="prog-env-design">ДИЗАЙН СРЕДЫ И ИНТЕРЬЕРА</a>
+                <a href="#" class="program-item" data-i18n="prog-contemp-art">СОВРЕМЕННОЕ ИСКУССТВО</a>
+                <a href="#" class="program-item" data-i18n="prog-figurative">ФИГУРАТИВНОЕ ИСКУССТВО</a>
+                <a href="#" class="program-item" data-i18n="prog-fashion">МОДА</a>
+                <a href="#" class="program-item" data-i18n="prog-game-design">ГЕЙМ-ДИЗАЙН</a>
+                <a href="#" class="program-item" data-i18n="prog-design-code">ДИЗАЙН И ПРОГРАММИРОВАНИЕ</a>
+                <a href="#" class="program-item" data-i18n="prog-design-promo">ДИЗАЙН И ПРОДВИЖЕНИЕ</a>
+                <a href="#" class="program-item" data-i18n="prog-event-design">ИВЕНТ-ДИЗАЙН. ТЕАТР. ПЕРФОМАНС</a>
+                <a href="#" class="program-item" data-i18n="prog-ad-art">ИСКУССТВО РЕКЛАМЫ</a>
+                <a href="#" class="program-item" data-i18n="prog-media-design">МЕДИА И ДИЗАЙН</a>
+                <a href="#" class="program-item" data-i18n="prog-product-design">ПРЕДМЕТНЫЙ И ПРОМЫШЛЕННЫЙ ДИЗАЙН</a>
+                <a href="#" class="program-item" data-i18n="prog-sound-art">САУНД-АРТ И САУНД-ДИЗАЙН</a>
+                <a href="#" class="program-item" data-i18n="prog-territorial">ТЕРРИТОРИАЛЬНЫЙ БРЕНДИНГ И ДИЗАЙН ГОРОДСКОЙ СРЕДЫ</a>
+                <a href="#" class="program-item" data-i18n="prog-typography">ТИПОГРАФИКА И ДИЗАЙН КНИГИ</a>
+                <a href="#" class="program-item program-item--highlight" data-i18n="prog-creative-mgmt">УПРАВЛЕНИЕ В КРЕАТИВНЫХ ИНДУСТРИЯХ</a>
+                <a href="#" class="program-item" data-i18n="prog-photo">ФОТОГРАФИЯ</a>
+                <a href="#" class="program-item" data-i18n="prog-screen-arts">ЭКРАННЫЕ ИСКУССТВА</a>
+                <a href="#" class="program-item" data-i18n="prog-jewelry">ЮВЕЛИРНЫЙ ДИЗАЙН</a>
+                <a href="#" class="program-item program-item--blue" data-i18n="prog-online">ОНЛАЙН-ОБУЧЕНИЕ В ШКОЛЕ ДИЗАЙНА</a>
+                <a href="#" class="program-item" data-i18n="prog-spb">ШКОЛА ДИЗАЙНА НИУ ВШЭ — САНКТ-ПЕТЕРБУРГ</a>
+                <a href="#" class="program-item" data-i18n="prog-nn">ШКОЛА ДИЗАЙНА НИУ ВШЭ — НИЖНИЙ НОВГОРОД</a>
+                <a href="#" class="program-item program-item--blue" data-i18n="prog-perm">ШКОЛА ДИЗАЙНА НИУ ВШЭ — ПЕРМЬ (ОНЛАЙН-БАКАЛАВРИАТ)</a>
+                <a href="#" class="program-item" data-i18n="prog-yerevan">HSE ART AND DESIGN SCHOOL INTERNATIONAL — ЕРЕВАН</a>
+                <a href="#" class="program-item" data-i18n="prog-preuni">ФАКУЛЬТЕТ ДОВУЗОВСКОЙ ПОДГОТОВКИ</a>
+                <a href="#" class="program-item" data-i18n="prog-add-edu">ДОПОЛНИТЕЛЬНОЕ ОБРАЗОВАНИЕ</a>
+                <a href="#" class="program-item" data-i18n="prog-kids-school">ДЕТСКАЯ ШКОЛА ДИЗАЙНА</a>
             </div>
             <div class="school-description__actions">
-                <button class="btn-black info-button">КАК ПОСТУПИТЬ</button>
-                <button class="btn-outline info-button">ДНИ ОТКРЫТЫХ ДВЕРЕЙ</button>
+                <button class="btn-black" data-i18n="btn-apply">КАК ПОСТУПИТЬ</button>
+                <button class="btn-outline" data-i18n="btn-open-days">ДНИ ОТКРЫТЫХ ДВЕРЕЙ</button>
                 <div class="social-icons">
-                    <a href="#" class="social-icon"><img src="images/telegram.png" alt="Telegram"></a>
-                    <a href="#" class="social-icon"><img src="images/vk.png" alt="VK"></a>
-                    <a href="#" class="social-icon"><img src="images/youtube.png" alt="YouTube"></a>
+                    <a href="#" class="social-icon"><img src="images/telegram.png" alt="Telegram" data-i18n-alt="social-telegram"></a>
+                    <a href="#" class="social-icon"><img src="images/vk.png" alt="VK" data-i18n-alt="social-vk"></a>
+                    <a href="#" class="social-icon"><img src="images/youtube.png" alt="YouTube" data-i18n-alt="social-youtube"></a>
                 </div>
             </div>
         </div>
@@ -254,26 +278,26 @@
 
     <section class="news-section" id="news">
         <div class="container">
-            <h2 class="section-title">НОВОСТИ</h2>
+            <h2 class="section-title" data-i18n="section-news">НОВОСТИ</h2>
             <div class="news-grid">
                 <article class="news-item news-item--featured">
                     <div class="news-item__image">
-                        <img src="images/news_left.png" alt="Итоги 2022 года">
+                        <img src="images/news_left.png" alt="Итоги 2022 года" data-i18n-alt="news1-alt">
                     </div>
                     <div class="news-item__content">
-                        <h3 class="news-item__title">Итоги 2022 года в Школе дизайна НИУ ВШЭ</h3>
-                        <p class="news-item__excerpt">
+                        <h3 class="news-item__title" data-i18n="news1-title">Итоги 2022 года в Школе дизайна НИУ ВШЭ</h3>
+                        <p class="news-item__excerpt" data-i18n="news1-excerpt">
                             Для всех нас 2022 год был насыщенным и сложным. Но несмотря на глобальные изменения и общую турбулентность студенты и кураторы Школы дизайна сделали огромное количество важных проектов — как на базе Школы, так и на внешних площадках: фестивали и выставки, дизайн-ивенты и конкурсы, концерты и флеш-шоу. Впереди, мы верим, еще больше таких событий, которые становятся частью профессионального портфолио, нашими общими достижениями и точками роста.
                         </p>
                     </div>
                 </article>
                 <article class="news-item news-item--featured">
                     <div class="news-item__image">
-                        <img src="images/news_right.png" alt="Diploma22">
+                        <img src="images/news_right.png" alt="Diploma22" data-i18n-alt="news2-alt">
                     </div>
                     <div class="news-item__content">
-                        <h3 class="news-item__title">Diploma22. Выставка выпускников Школы дизайна</h3>
-                        <p class="news-item__excerpt">
+                        <h3 class="news-item__title" data-i18n="news2-title">Diploma22. Выставка выпускников Школы дизайна</h3>
+                        <p class="news-item__excerpt" data-i18n="news2-excerpt">
                             22 декабря в HSE ART GALLERY пройдет выставка Diploma22. В экспозицию вошли дипломные проекты выпускников бакалаврских профилей 2022 года «Коммуникационный дизайн», «Дизайн и современное искусство».
                         </p>
                     </div>
@@ -281,68 +305,67 @@
 
                 <article class="news-item video-trigger" data-video="videos/rick-astley-never-gonna-give-you-up.mp4">
                     <div class="news-item__image">
-                        <img src="images/video-thumbnail.jpg" alt="Смотреть видео о школе">
+                        <img src="images/video-thumbnail.jpg" alt="Смотреть видео о школе" data-i18n-alt="video-alt">
                         <div class="video-play-button">▶</div>
                     </div>
                     <div class="news-item__content">
-                        <h3 class="news-item__title">Видео о Школе дизайна</h3>
-                        <p class="news-item__excerpt">Посмотрите видео о жизни школы, проектах студентов и возможностях обучения</p>
+                        <h3 class="news-item__title" data-i18n="video-title">Видео о Школе дизайна</h3>
+                        <p class="news-item__excerpt" data-i18n="video-excerpt">Посмотрите видео о жизни школы, проектах студентов и возможностях обучения</p>
                     </div>
                 </article>
 
                 <article class="news-item">
                     <div class="news-item__content">
-                        <h3 class="news-item__title">«Работа со студентами очень похожа на работу с редакцией». Интервью с Ольгой Страховской</h3>
-                        <p class="news-item__excerpt">
+                        <h3 class="news-item__title" data-i18n="news3-title">«Работа со студентами очень похожа на работу с редакцией». Интервью с Ольгой Страховской</h3>
+                        <p class="news-item__excerpt" data-i18n="news3-excerpt">
                             В этом году с командой преподавателей Школы дизайна НИУ ВШЭ присоединилась Ольга Страховская, бывший шеф-редактор Blueprint, имеющая огромный опыт работы в различных медиа. В этом интервью Ольга подробно рассказала о своей карьере, поделилась своим взглядом на современные медиа и их развитие, и рассказала о том, чему уделяет наибольшее внимание на занятиях со студентами.
                         </p>
                     </div>
                 </article>
                 <article class="news-item">
                     <div class="news-item__content">
-                        <h3 class="news-item__title">Итоги фестиваля нового дизайна «Среда 2022».</h3>
-                        <p class="news-item__excerpt">
+                        <h3 class="news-item__title" data-i18n="news4-title">Итоги фестиваля нового дизайна «Среда 2022».</h3>
+                        <p class="news-item__excerpt" data-i18n="news4-excerpt">
                             23 ноября на сайте фестиваля нового дизайна «Среда 2022» были опубликованы результаты голосования жюри, определившего триумфаторов фестиваля. В очередной раз проекты студентов, выпускников и кураторов Школы дизайна заняли несколько призовых мест и получили специальные награды, а Школа дизайна второй год подряд стала Учебным заведением года!
                         </p>
                     </div>
                 </article>
                 <article class="news-item">
                     <div class="news-item__content">
-                        <h3 class="news-item__title">Студия «Проектор» Мити Харшака создала альбом для Ботанического сада СПбГУ</h3>
-                        <p class="news-item__excerpt">
+                        <h3 class="news-item__title" data-i18n="news5-title">Студия «Проектор» Мити Харшака создала альбом для Ботанического сада СПбГУ</h3>
+                        <p class="news-item__excerpt" data-i18n="news5-excerpt">
                             Арт-директором проекта выступил руководитель Школы дизайна НИУ ВШЭ — Санкт-Петербург Митя Харшак, дизайн выполнен преподавателем технологий дизайна и выпускником Школы дизайна Иваном Воронцовым. В работе использовался шрифт Feldae студентки профиля «Коммуникационный дизайн» Дарьи Казаковой.
                         </p>
                     </div>
                 </article>
             </div>
             <div class="news-section__more">
-                <button class="btn-black">БОЛЬШЕ НОВОСТЕЙ И СОБЫТИЙ</button>
+                <button class="btn-black" data-i18n="news-more">БОЛЬШЕ НОВОСТЕЙ И СОБЫТИЙ</button>
             </div>
         </div>
     </section>
 
     <section class="media-gallery" id="gallery">
         <div class="container">
-            <h2 class="section-title">ГАЛЕРЕЯ ПРОЕКТОВ</h2>
             <div class="gallery-controls">
-                <button class="gallery-btn" data-sound="design">Дизайн</button>
-                <button class="gallery-btn" data-sound="art">Искусство</button>
-                <button class="gallery-btn" data-sound="tech">Технологии</button>
+                <button class="gallery-btn" data-sound="design" data-i18n="gallery-design">Дизайн</button>
+                <button class="gallery-btn" data-sound="art" data-i18n="gallery-art">Искусство</button>
+                <button class="gallery-btn" data-sound="tech" data-i18n="gallery-tech">Технологии</button>
             </div>
             <div class="gallery-display">
                 <div class="gallery-image-wrapper">
-                    <img id="galleryImage" src="images/gallery/default.png" alt="Галерея" class="gallery-image">
+                    <img id="galleryImage" src="images/gallery/default.png" alt="Галерея" class="gallery-image" data-i18n-alt="gallery-alt">
                     <div class="gallery-indicator" id="galleryIndicator">
                         <span class="indicator-icon">▶️</span>
-                        <span class="indicator-text">Нажмите кнопку</span>
+                        <span class="indicator-text" data-i18n="gallery-click">Нажмите кнопку</span>
                     </div>
                 </div>
                 <div class="gallery-info">
-                    <h3 id="galleryTitle">Выберите категорию</h3>
-                    <p id="galleryDescription">Нажмите на одну из кнопок выше, чтобы увидеть проекты и услышать звуковой эффект</p>
+                    <h3 id="galleryTitle" data-i18n="gallery-select-category">Выберите категорию</h3>
+                    <p id="galleryDescription" data-i18n="gallery-desc">Нажмите на одну из кнопок выше, чтобы увидеть проекты и услышать звуковой эффект</p>
                 </div>
                 <div class="gallery-volume">
-                    <label>🔊 Громкость:</label>
+                    <label data-i18n="gallery-volume">🔊 Громкость:</label>
                     <input type="range" id="volumeControl" min="0" max="100" value="70">
                 </div>
             </div>
@@ -351,108 +374,108 @@
 
     <section class="resources-section" id="resources">
         <div class="container">
-            <h2 class="section-title">РЕСУРСЫ</h2>
+            <h2 class="section-title" data-i18n="section-resources">РЕСУРСЫ</h2>
             <div class="resources-grid">
                 <article class="resource-item">
                     <div class="resource-item__image">
-                        <img src="images/hse-art-gallery.png" alt="HSE Art Gallery">
+                        <img src="images/hse-art-gallery.png" alt="HSE Art Gallery" data-i18n-alt="res-gallery-alt">
                     </div>
                     <div class="resource-item__content">
-                        <h3 class="resource-item__title">HSE ART GALLERY</h3>
-                        <p class="resource-item__text">
+                        <h3 class="resource-item__title" data-i18n="res-gallery-title">HSE ART GALLERY</h3>
+                        <p class="resource-item__text" data-i18n="res-gallery-text">
                             Галерея современного искусства HSE ART GALLERY работает на базе Школы дизайна в Москве. Здесь на одной площадке представлены работы актуальных современных художников и студенческие проекты. К организации выставок команда галереи привлекает как преподавателей Школы, так и независимых кураторов, а также представителей ведущих культурных институций Москвы.
                         </p>
                     </div>
                 </article>
                 <article class="resource-item">
                     <div class="resource-item__image">
-                        <img src="images/typography.png" alt="Типография">
+                        <img src="images/typography.png" alt="Типография" data-i18n-alt="res-typo-alt">
                     </div>
                     <div class="resource-item__content">
-                        <h3 class="resource-item__title">Типография</h3>
-                        <p class="resource-item__text">
+                        <h3 class="resource-item__title" data-i18n="res-typo-title">Типография</h3>
+                        <p class="resource-item__text" data-i18n="res-typo-text">
                             Типография НИУ ВШЭ — профессиональное подразделение, которое оказывает все виды полиграфических услуг для студентов и сотрудников, а также работает с внешними заказчиками. Студенты Школы дизайна могут пользоваться услугами типографии на специальных условиях — любой заказ стоит на 20% дешевле.
                         </p>
                     </div>
                 </article>
                 <article class="resource-item">
                     <div class="resource-item__image">
-                        <img src="images/design-lab.png" alt="Лаборатория дизайна">
+                        <img src="images/design-lab.png" alt="Лаборатория дизайна" data-i18n-alt="res-lab-alt">
                     </div>
                     <div class="resource-item__content">
-                        <h3 class="resource-item__title">Лаборатория дизайна</h3>
-                        <p class="resource-item__text">
+                        <h3 class="resource-item__title" data-i18n="res-lab-title">Лаборатория дизайна</h3>
+                        <p class="resource-item__text" data-i18n="res-lab-text">
                             Дизайн-бюро при Школе дизайна, где талантливые старшекурсники работают в связке с опытными арт-директорами. На счету лаборатории комплексные коммерческие проекты в областях брендинга, книгоиздания, анимации, музейного проектирования, цифрового дизайна.
                         </p>
                     </div>
                 </article>
                 <article class="resource-item">
                     <div class="resource-item__image">
-                        <img src="images/computer-class.png" alt="Компьютерные классы">
+                        <img src="images/computer-class.png" alt="Компьютерные классы" data-i18n-alt="res-computer-alt">
                     </div>
                     <div class="resource-item__content">
-                        <h3 class="resource-item__title">Компьютерные классы</h3>
-                        <p class="resource-item__text">
+                        <h3 class="resource-item__title" data-i18n="res-computer-title">Компьютерные классы</h3>
+                        <p class="resource-item__text" data-i18n="res-computer-text">
                             Одна из ключевых учебных дисциплин — технологии дизайна, где студенты получают основной инструментарий, необходимый для комплексной работы над любым проектом: пакет программ для графического дизайна, софт для создания анимации, 3D-моделей, моушн-дизайна и продуктов цифрового дизайна.
                         </p>
                     </div>
                 </article>
                 <article class="resource-item">
                     <div class="resource-item__image">
-                        <img src="images/porcelain-workshop.png" alt="Мастерская фарфора">
+                        <img src="images/porcelain-workshop.png" alt="Мастерская фарфора" data-i18n-alt="res-porcelain-alt">
                     </div>
                     <div class="resource-item__content">
-                        <h3 class="resource-item__title">Мастерская фарфора</h3>
-                        <p class="resource-item__text">
+                        <h3 class="resource-item__title" data-i18n="res-porcelain-title">Мастерская фарфора</h3>
+                        <p class="resource-item__text" data-i18n="res-porcelain-text">
                             В мастерской фарфора каждый студент может на практике увидеть, как происходит процесс литья, а также попробовать себя в качестве фарфориста под руководством опытного мастера или самостоятельно поработать с готовыми формами. Мастерская оснащена печью, сушильными шкафами, гипсоламельными станками, а также красками, глазурями и пигментами.
                         </p>
                     </div>
                 </article>
                 <article class="resource-item">
                     <div class="resource-item__image">
-                        <img src="images/prepress.png" alt="Препресс и цифровая печать">
+                        <img src="images/prepress.png" alt="Препресс и цифровая печать" data-i18n-alt="res-prepress-alt">
                     </div>
                     <div class="resource-item__content">
-                        <h3 class="resource-item__title">Препресс и цифровая печать</h3>
-                        <p class="resource-item__text">
+                        <h3 class="resource-item__title" data-i18n="res-prepress-title">Препресс и цифровая печать</h3>
+                        <p class="resource-item__text" data-i18n="res-prepress-text">
                             Учебная лаборатория HSE PrepressLab ведет полный цикл работ по допечатной подготовке. Лаборатория работает в открытом режиме для консультаций всех студентов и позволяет печатать изображения максимального качества.
                         </p>
                     </div>
                 </article>
             </div>
             <div class="resources-section__more">
-                <button class="btn-black">ЕЩЁ</button>
+                <button class="btn-black" data-i18n="resources-more">ЕЩЁ</button>
             </div>
         </div>
     </section>
 
     <section class="about-hse-section" id="about">
         <div class="container">
-            <h2 class="about-hse__title">О ВЫСШЕЙ ШКОЛЕ ЭКОНОМИКИ</h2>
+            <h2 class="about-hse__title" data-i18n="section-about">О ВЫСШЕЙ ШКОЛЕ ЭКОНОМИКИ</h2>
 
             <div class="about-hse__stats stats-grid">
                 <div class="stat-item">
                     <div class="stat-number" data-target="51000">0</div>
-                    <div class="stat-item__label">студентов и аспирантов</div>
+                    <div class="stat-item__label" data-i18n="stat-students">студентов и аспирантов</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number" data-target="7000">0</div>
-                    <div class="stat-item__label">преподавателей и исследователей</div>
+                    <div class="stat-item__label" data-i18n="stat-teachers">преподавателей и исследователей</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number" data-target="311">0</div>
-                    <div class="stat-item__label">программ высшего образования</div>
+                    <div class="stat-item__label" data-i18n="stat-programs">программ высшего образования</div>
                 </div>
             </div>
 
             <div class="about-hse__description">
-                <p>
+                <p data-i18n="about-desc-1">
                     Школа дизайна — подразделение одного из ведущих российских университетов —
                     Высшей школы экономики, которая считается лучшим российским вузом в большинстве
                     авторитетных международных образовательных рейтингов
                     (QS, THE, ARWU, U.S. News Best Global Universities Subject)
                 </p>
-                <p>
+                <p data-i18n="about-desc-2">
                     Вышка — это не только экспертная площадка и научная лаборатория, но и представительная
                     дискуссионная площадка: сотрудники ВШЭ принимают активное участие в ключевых
                     экспертных дискуссиях, входят в состав многих коллегиальных и совещательных органов
@@ -461,14 +484,13 @@
                     транспорта, государственного управления, технологического развития.
                 </p>
             </div>
-
             <div class="about-hse__actions">
-                <button class="btn-black info-button">КАК ПОСТУПИТЬ</button>
-                <button class="btn-light info-button">ДНИ ОТКРЫТЫХ ДВЕРЕЙ</button>
+                <button class="btn-black" data-i18n="btn-apply">КАК ПОСТУПИТЬ</button>
+                <button class="btn-light" data-i18n="btn-open-days">ДНИ ОТКРЫТЫХ ДВЕРЕЙ</button>
                 <div class="social-icons">
-                    <a href="#" class="social-icon"><img src="images/telegram.png" alt="Telegram"></a>
-                    <a href="#" class="social-icon"><img src="images/vk.png" alt="VK"></a>
-                    <a href="#" class="social-icon"><img src="images/youtube.png" alt="YouTube"></a>
+                    <a href="#" class="social-icon"><img src="images/telegram.png" alt="Telegram" data-i18n-alt="social-telegram"></a>
+                    <a href="#" class="social-icon"><img src="images/vk.png" alt="VK" data-i18n-alt="social-vk"></a>
+                    <a href="#" class="social-icon"><img src="images/youtube.png" alt="YouTube" data-i18n-alt="social-youtube"></a>
                 </div>
             </div>
         </div>
@@ -476,7 +498,7 @@
 
     <section class="map-section" id="contacts">
         <div class="container">
-            <h2 class="section-title">НАШИ КОНТАКТЫ</h2>
+            <h2 class="section-title" data-i18n="section-contacts">НАШИ КОНТАКТЫ</h2>
             <div class="map-container">
                 <div id="yandexMap" style="width: 100%; height: 500px;"></div>
             </div>
@@ -489,196 +511,202 @@
         <div class="footer__top">
             <div class="footer__brand">
                 <div class="footer__logo">
-                    <img src="images/logo_footer.png" alt="HSE Art and Design School">
+                    <img src="images/logo_footer.png" alt="HSE Art and Design School" data-i18n-alt="footer-logo-alt">
                 </div>
-                <p class="footer__subtitle">Школа дизайна Высшей школы экономики</p>
-                <img src="images/top_150_footer.png" alt="TOP 150">
+                <p class="footer__subtitle" data-i18n="footer-school">Школа дизайна Высшей школы экономики</p>
+                <img src="images/top_150_footer.png" alt="TOP 150" data-i18n-alt="footer-top150-alt">
             </div>
             <div class="footer__feedback">
                 <a href="feedback.html">
-                    <button class="btn-feedback">ОСТАВИТЬ ОТЗЫВ</button>
+                    <button href="feedback.html" class="btn-feedback" data-i18n="footer-feedback">ОСТАВИТЬ ОТЗЫВ</button>
                 </a>
                 <div class="footer__student-links">
-                    <a href="#">Обращения студентов</a>
-                    <a href="#">Поблагодарить или пожаловаться</a>
+                    <a href="#" data-i18n="footer-student-appeals">Обращения студентов</a>
+                    <a href="#" data-i18n="footer-student-thanks">Поблагодарить или пожаловаться</a>
                 </div>
             </div>
         </div>
         <div class="footer__contacts">
             <div class="footer__phones">
-                <h3 class="footer__heading">ТЕЛЕФОНЫ</h3>
+                <h3 class="footer__heading" data-i18n="footer-phones">ТЕЛЕФОНЫ</h3>
                 <div class="footer__phones-grid">
                     <div class="phone-item">
                         <a href="tel:+74956218711">+7 495 621-87-11</a>
-                        <span>По общим вопросам</span>
+                        <span data-i18n="footer-phone-general">По общим вопросам</span>
                     </div>
                     <div class="phone-item">
                         <a href="tel:+74951709803">+7 495 170-98-03</a>
-                        <span>По вопросам поступления<br>Бакалавриат и магистратура<br>С понедельника по пятницу с 10:00 до 18:00</span>
+                        <span data-i18n="footer-phone-admission">По вопросам поступления</span><br>
+                        <span data-i18n="footer-phone-bachelor-master">Бакалавриат и магистратура</span><br>
+                        <span data-i18n="footer-phone-weekdays">С понедельника по пятницу с 10:00 до 18:00</span>
                     </div>
                     <div class="phone-item">
                         <a href="tel:+74952796914">+7 495 279-69-14</a>
-                        <span>Дополнительное образование в Москве</span>
+                        <span data-i18n="footer-phone-add-moscow">Дополнительное образование в Москве</span>
                     </div>
                     <div class="phone-item">
                         <a href="tel:+74955677470">+7 495 567-74-70</a>
-                        <span>По вопросам поступления</span>
+                        <span data-i18n="footer-phone-admission">По вопросам поступления</span>
                     </div>
                     <div class="phone-item">
                         <a href="tel:+74957265080">+7 495 726-50-80</a>
-                        <span>Дополнительное образование в Санкт-Петербурге</span>
+                        <span data-i18n="footer-phone-add-spb">Дополнительное образование в Санкт-Петербурге</span>
                     </div>
                     <div class="phone-item">
                         <a href="tel:+74956403904">+7 495 640-39-04</a>
-                        <span>По вопросам поступления<br>Детская школа</span>
+                        <span data-i18n="footer-phone-admission">По вопросам поступления</span><br>
+                        <span data-i18n="footer-phone-kids">Детская школа</span>
                     </div>
                     <div class="phone-item">
                         <a href="tel:+78010166393">+7 801 016-63-93</a>
-                        <span>По вопросам поступления<br>Дополнительное образование в Санкт-Петербурге</span>
+                        <span data-i18n="footer-phone-admission">По вопросам поступления</span><br>
+                        <span data-i18n="footer-phone-add-spb">Дополнительное образование в Санкт-Петербурге</span>
                     </div>
                 </div>
             </div>
             <div class="footer__address">
-                <h3 class="footer__heading">АДРЕС И EMAIL</h3>
+                <h3 class="footer__heading" data-i18n="footer-address">АДРЕС И EMAIL</h3>
                 <div class="address-item">
-                    <p>Малая Пионерская ул., 12<br>Метро Павелецкая</p>
+                    <p data-i18n="footer-addr-moscow">Малая Пионерская ул., 12</p>
+                    <p data-i18n="footer-addr-metro-paveletskaya">Метро Павелецкая</p>
                     <a href="mailto:design@hse.ru">design@hse.ru</a>
-                    <span>Основное образование</span>
+                    <span data-i18n="footer-addr-main-edu">Основное образование</span>
                 </div>
                 <div class="address-item">
-                    <p>Измайловское шоссе, 44с2<br>Метро Семёновская</p>
+                    <p data-i18n="footer-addr-izmailovo">Измайловское шоссе, 44с2</p>
+                    <p data-i18n="footer-addr-metro-semenovskaya">Метро Семёновская</p>
                     <a href="mailto:dop-design@hse.ru">dop-design@hse.ru</a>
-                    <span>Дополнительное образование</span>
+                    <span data-i18n="footer-addr-add-edu">Дополнительное образование</span>
                 </div>
             </div>
         </div>
         <div class="footer__nav">
             <div class="footer__nav-column">
-                <h3 class="footer__nav-title">ОБРАЗОВАНИЕ</h3>
+                <h3 class="footer__nav-title" data-i18n="footer-nav-edu">ОБРАЗОВАНИЕ</h3>
                 <ul>
-                    <li><a href="#">Бакалавриат</a></li>
-                    <li><a href="#">Магистратура</a></li>
-                    <li><a href="#">Дополнительное образование</a></li>
-                    <li><a href="#">Аспирантура</a></li>
-                    <li><a href="#">Студенческое портфолио</a></li>
-                    <li><a href="#">Направления обучения</a></li>
-                    <li><a href="#">Базовые курсы</a></li>
+                    <li><a href="#" data-i18n="nav-bachelor">Бакалавриат</a></li>
+                    <li><a href="#" data-i18n="nav-master">Магистратура</a></li>
+                    <li><a href="#" data-i18n="nav-add-edu">Дополнительное образование</a></li>
+                    <li><a href="#" data-i18n="nav-aspirant">Аспирантура</a></li>
+                    <li><a href="#" data-i18n="nav-portfolio">Студенческое портфолио</a></li>
+                    <li><a href="#" data-i18n="nav-programs">Направления обучения</a></li>
+                    <li><a href="#" data-i18n="nav-basic-courses">Базовые курсы</a></li>
                 </ul>
             </div>
             <div class="footer__nav-column">
-                <h3 class="footer__nav-title">ПОСТУПАЮЩИМ</h3>
+                <h3 class="footer__nav-title" data-i18n="footer-nav-applicants">ПОСТУПАЮЩИМ</h3>
                 <ul>
-                    <li><a href="#">Подготовка к поступлению</a></li>
-                    <li><a href="#">Дни открытых дверей</a></li>
-                    <li><a href="#">Иностранным абитуриентам</a></li>
-                    <li><a href="#">Условия поступления</a></li>
-                    <li><a href="#">Олимпиада мом</a></li>
-                    <li><a href="#">Олимпиада «Я — профессионал»</a></li>
-                    <li><a href="#">Летние интенсивы</a></li>
-                    <li><a href="#">Интернет-школа</a></li>
-                    <li><a href="#">Лицей НИУ ВШЭ</a></li>
+                    <li><a href="#" data-i18n="footer-nav-prep">Подготовка к поступлению</a></li>
+                    <li><a href="#" data-i18n="footer-nav-open-days">Дни открытых дверей</a></li>
+                    <li><a href="#" data-i18n="footer-nav-foreign">Иностранным абитуриентам</a></li>
+                    <li><a href="#" data-i18n="footer-nav-conditions">Условия поступления</a></li>
+                    <li><a href="#" data-i18n="footer-nav-olymp-mom">Олимпиада мом</a></li>
+                    <li><a href="#" data-i18n="footer-nav-olymp-prof">Олимпиада «Я — профессионал»</a></li>
+                    <li><a href="#" data-i18n="footer-nav-summer">Летние интенсивы</a></li>
+                    <li><a href="#" data-i18n="footer-nav-online-school">Интернет-школа</a></li>
+                    <li><a href="#" data-i18n="footer-nav-lyceum">Лицей НИУ ВШЭ</a></li>
                 </ul>
             </div>
             <div class="footer__nav-column">
-                <h3 class="footer__nav-title">СТУДЕНТАМ</h3>
+                <h3 class="footer__nav-title" data-i18n="footer-nav-students">СТУДЕНТАМ</h3>
                 <ul>
-                    <li><a href="#">Информация</a></li>
-                    <li><a href="#">Расписание</a></li>
-                    <li><a href="#">Учебный офис</a></li>
-                    <li><a href="#">Карта креативных компетенций</a></li>
-                    <li><a href="#">Вариативные дисциплины</a></li>
-                    <li><a href="#">Дисциплины по истории дизайна и искусства</a></li>
-                    <li><a href="#">Критерии оценивания проектов</a></li>
-                    <li><a href="#">Студенческие рейтинги</a></li>
-                    <li><a href="#">Студенческое портфолио</a></li>
-                    <li><a href="#">Студенческое портфолио 2.0</a></li>
-                    <li><a href="#">Оставьте отзыв</a></li>
+                    <li><a href="#" data-i18n="footer-nav-info">Информация</a></li>
+                    <li><a href="#" data-i18n="footer-nav-schedule">Расписание</a></li>
+                    <li><a href="#" data-i18n="footer-nav-office">Учебный офис</a></li>
+                    <li><a href="#" data-i18n="footer-nav-competencies">Карта креативных компетенций</a></li>
+                    <li><a href="#" data-i18n="footer-nav-electives">Вариативные дисциплины</a></li>
+                    <li><a href="#" data-i18n="footer-nav-history">Дисциплины по истории дизайна и искусства</a></li>
+                    <li><a href="#" data-i18n="footer-nav-criteria">Критерии оценивания проектов</a></li>
+                    <li><a href="#" data-i18n="footer-nav-ratings">Студенческие рейтинги</a></li>
+                    <li><a href="#" data-i18n="footer-nav-portfolio">Студенческое портфолио</a></li>
+                    <li><a href="#" data-i18n="footer-nav-portfolio2">Студенческое портфолио 2.0</a></li>
+                    <li><a href="#" data-i18n="footer-nav-feedback">Оставьте отзыв</a></li>
                 </ul>
             </div>
             <div class="footer__nav-column">
-                <h3 class="footer__nav-title">ВЫПУСКНИКАМ</h3>
+                <h3 class="footer__nav-title" data-i18n="footer-nav-graduates">ВЫПУСКНИКАМ</h3>
                 <ul>
-                    <li><a href="#">Клуб выпускников Школы дизайна</a></li>
-                    <li><a href="#">HSE Alumni</a></li>
+                    <li><a href="#" data-i18n="footer-nav-alumni-club">Клуб выпускников Школы дизайна</a></li>
+                    <li><a href="#" data-i18n="footer-nav-hse-alumni">HSE Alumni</a></li>
                 </ul>
             </div>
             <div class="footer__nav-column">
-                <h3 class="footer__nav-title">РЕСУРСЫ</h3>
+                <h3 class="footer__nav-title" data-i18n="footer-nav-resources">РЕСУРСЫ</h3>
                 <ul>
-                    <li><a href="#">HSE ART GALLERY</a></li>
-                    <li><a href="#">Типография</a></li>
-                    <li><a href="#">Лаборатория дизайна</a></li>
-                    <li><a href="#">Компьютерные классы</a></li>
-                    <li><a href="#">Мастерская фарфора</a></li>
-                    <li><a href="#">Препресс и цифровая печать</a></li>
-                    <li><a href="#">Шелкографская мастерская</a></li>
-                    <li><a href="#">Ювелирная мастерская</a></li>
-                    <li><a href="#">Профессиональные фотостудии</a></li>
-                    <li><a href="#">Фэшн-мастерские</a></li>
-                    <li><a href="#">Лаборатория плаката</a></li>
-                    <li><a href="#">Библиотека</a></li>
+                    <li><a href="#" data-i18n="res-gallery-title">HSE ART GALLERY</a></li>
+                    <li><a href="#" data-i18n="res-typo-title">Типография</a></li>
+                    <li><a href="#" data-i18n="res-lab-title">Лаборатория дизайна</a></li>
+                    <li><a href="#" data-i18n="res-computer-title">Компьютерные классы</a></li>
+                    <li><a href="#" data-i18n="res-porcelain-title">Мастерская фарфора</a></li>
+                    <li><a href="#" data-i18n="res-prepress-title">Препресс и цифровая печать</a></li>
+                    <li><a href="#" data-i18n="res-silk-title">Шелкографская мастерская</a></li>
+                    <li><a href="#" data-i18n="res-jewelry-title">Ювелирная мастерская</a></li>
+                    <li><a href="#" data-i18n="res-photo-title">Профессиональные фотостудии</a></li>
+                    <li><a href="#" data-i18n="res-fashion-title">Фэшн-мастерские</a></li>
+                    <li><a href="#" data-i18n="res-poster-title">Лаборатория плаката</a></li>
+                    <li><a href="#" data-i18n="res-library-title">Библиотека</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer__bottom-nav">
             <div class="footer__nav-column">
-                <h3 class="footer__nav-title">О ШКОЛЕ</h3>
+                <h3 class="footer__nav-title" data-i18n="footer-nav-about-school">О ШКОЛЕ</h3>
                 <ul>
-                    <li><a href="#">Информация о Школе дизайна</a></li>
-                    <li><a href="#">Новости</a></li>
-                    <li><a href="#">Календарь событий</a></li>
-                    <li><a href="#">Преподаватели и сотрудники</a></li>
-                    <li><a href="#">Руководство</a></li>
-                    <li><a href="#">Лицензии и дипломы</a></li>
-                    <li><a href="#">Структура</a></li>
-                    <li><a href="#">Айдентика</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#" data-i18n="footer-nav-school-info">Информация о Школе дизайна</a></li>
+                    <li><a href="#" data-i18n="subnav-news">Новости</a></li>
+                    <li><a href="#" data-i18n="footer-nav-calendar">Календарь событий</a></li>
+                    <li><a href="#" data-i18n="footer-nav-staff">Преподаватели и сотрудники</a></li>
+                    <li><a href="#" data-i18n="footer-nav-leadership">Руководство</a></li>
+                    <li><a href="#" data-i18n="footer-nav-licenses">Лицензии и дипломы</a></li>
+                    <li><a href="#" data-i18n="footer-nav-structure">Структура</a></li>
+                    <li><a href="#" data-i18n="footer-nav-identity">Айдентика</a></li>
+                    <li><a href="#" data-i18n="footer-nav-contacts">Контакты</a></li>
                 </ul>
             </div>
             <div class="footer__nav-column">
-                <h3 class="footer__nav-title">СОТРУДНИКАМ</h3>
+                <h3 class="footer__nav-title" data-i18n="footer-nav-staff">СОТРУДНИКАМ</h3>
                 <ul>
-                    <li><a href="#">Справочник сотрудника</a></li>
-                    <li><a href="#">Медицинское обслуживание</a></li>
-                    <li><a href="#">Антиплагиат</a></li>
-                    <li><a href="#">Экспедиции по городам России</a></li>
+                    <li><a href="#" data-i18n="footer-nav-handbook">Справочник сотрудника</a></li>
+                    <li><a href="#" data-i18n="footer-nav-medical">Медицинское обслуживание</a></li>
+                    <li><a href="#" data-i18n="footer-nav-antiplagiat">Антиплагиат</a></li>
+                    <li><a href="#" data-i18n="footer-nav-expeditions">Экспедиции по городам России</a></li>
                 </ul>
             </div>
             <div class="footer__nav-column">
-                <h3 class="footer__nav-title">HSE ART GALLERY</h3>
+                <h3 class="footer__nav-title" data-i18n="subnav-gallery">HSE ART GALLERY</h3>
                 <ul>
-                    <li><a href="#">Выставки</a></li>
-                    <li><a href="#">Архив</a></li>
-                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#" data-i18n="footer-nav-exhibitions">Выставки</a></li>
+                    <li><a href="#" data-i18n="footer-nav-archive">Архив</a></li>
+                    <li><a href="#" data-i18n="footer-nav-instagram">Instagram</a></li>
                 </ul>
             </div>
             <div class="footer__nav-column">
-                <h3 class="footer__nav-title">ДОПОЛНИТЕЛЬНО</h3>
+                <h3 class="footer__nav-title" data-i18n="footer-nav-additional">ДОПОЛНИТЕЛЬНО</h3>
                 <ul>
-                    <li><a href="#">Форум</a></li>
-                    <li><a href="#">Центр психологического консультирования</a></li>
-                    <li><a href="#">LMS — единая образовательная среда</a></li>
-                    <li><a href="#">Газета Школы дизайна</a></li>
+                    <li><a href="#" data-i18n="footer-nav-forum">Форум</a></li>
+                    <li><a href="#" data-i18n="footer-nav-psychology">Центр психологического консультирования</a></li>
+                    <li><a href="#" data-i18n="footer-nav-lms">LMS — единая образовательная среда</a></li>
+                    <li><a href="#" data-i18n="footer-nav-newspaper">Газета Школы дизайна</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer__newsletter">
-            <h2 class="footer__newsletter-title">Новости Школы дизайна</h2>
+            <h2 class="footer__newsletter-title" data-i18n="footer-newsletter">Новости Школы дизайна</h2>
             <form class="footer__newsletter-form">
-                <input type="email" placeholder="Email" class="footer__newsletter-input">
-                <button type="submit" class="btn-black">Подписаться</button>
+                <input type="email" placeholder="Email" class="footer__newsletter-input" data-i18n-placeholder="footer-newsletter-placeholder">
+                <button type="submit" class="btn-black" data-i18n="footer-subscribe">Подписаться</button>
             </form>
         </div>
         <div class="footer__bottom">
-            <div class="footer__copyright">
+            <div class="footer__copyright" data-i18n="footer-copyright">
                 © 1993–2022 Национальный исследовательский университет «Высшая школа экономики»
             </div>
             <div class="footer__socials">
-                <a href="#" class="social-link"><img src="images/vk_footer.png" alt="VK"></a>
-                <a href="#" class="social-link"><img src="images/v_footer.png" alt="V"></a>
-                <a href="#" class="social-link"><img src="images/youtube_footer.png" alt="YouTube"></a>
-                <a href="#" class="social-link"><img src="images/telegram_footer.png" alt="Telegram"></a>
-                <a href="#" class="social-link"><img src="images/circle_footer.png" alt="Circle"></a>
+                <a href="#" class="social-link"><img src="images/vk_footer.png" alt="VK" data-i18n-alt="social-vk"></a>
+                <a href="#" class="social-link"><img src="images/v_footer.png" alt="V" data-i18n-alt="social-v"></a>
+                <a href="#" class="social-link"><img src="images/youtube_footer.png" alt="YouTube" data-i18n-alt="social-youtube"></a>
+                <a href="#" class="social-link"><img src="images/telegram_footer.png" alt="Telegram" data-i18n-alt="social-telegram"></a>
+                <a href="#" class="social-link"><img src="images/circle_footer.png" alt="Circle" data-i18n-alt="social-circle"></a>
             </div>
         </div>
     </div>
@@ -708,6 +736,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+<script src="js/theme.js"></script>
 <script src="js/mobile-menu.js"></script>
 <script src="js/burger-menu.js"></script>
 <script src="js/preloader.js"></script>
@@ -721,6 +750,7 @@
 <script src="js/parallax.js"></script>
 <script src="js/counters.js"></script>
 <script src="js/main.js"></script>
+<script src="js/translate.js"></script>
 
 </body>
 </html>

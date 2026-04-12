@@ -59,6 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    if (typeof initTheme === 'function') {
+        initTheme();
+    }
+
+    if (typeof initTranslation === 'function') {
+        initTranslation();
+    }
+
     updateAuthButtons();
 });
 
@@ -66,4 +74,24 @@ window.addEventListener('message', (event) => {
     if (event.data === 'auth:login') {
         updateAuthButtons();
     }
+});
+
+function updateUserIcon() {
+    const userIconBtn = document.getElementById('userIconBtn');
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    if (userIconBtn) {
+        userIconBtn.style.display = currentUser ? 'flex' : 'none';
+    }
+}
+
+window.addEventListener('storage', (e) => {
+    if (e.key === 'currentUser') {
+        updateUserIcon();
+        updateAuthButtons();
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateUserIcon();
 });

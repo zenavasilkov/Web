@@ -32,6 +32,9 @@
                 <a href="#" class="btn-outline" id="loginBtn">🚪 <span class="header__actions_text">Войти</span></a>
                 <a href="login.html" class="btn-outline" id="logoutBtn">🚪 <span class="header__actions_text">Выйти</span></a>
                 <a href="admin.html" class="btn-outline" id="adminBtn">⚙️ <span class="header__actions_text">Админ-панель</span></a>
+                <button class="user-icon-btn" id="userIconBtn" aria-label="Мой профиль" style="display: none;">
+                    <span class="user-icon">👤</span>
+                </button>
             </div>
         </div>
     </div>
@@ -123,11 +126,67 @@
     </div>
 </footer>
 
+<div class="modal profile-modal" id="profileModal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content modal__content--large">
+        <button class="modal__close" aria-label="Закрыть">×</button>
+        <h2 class="modal__title" data-i18n="modal-profile-title">Мой профиль</h2>
+
+        <form id="profileForm" class="profile-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label" for="profileFirstName">Имя <span class="required">*</span></label>
+                    <input type="text" id="profileFirstName" name="firstName" class="form-input" required>
+                    <span class="error-message" id="profileFirstNameError"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="profileLastName">Фамилия <span class="required">*</span></label>
+                    <input type="text" id="profileLastName" name="lastName" class="form-input" required>
+                    <span class="error-message" id="profileLastNameError"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="profilePatronymic">Отчество</label>
+                    <input type="text" id="profilePatronymic" name="patronymic" class="form-input">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label" for="profileEmail">Email <span class="required">*</span></label>
+                    <input type="email" id="profileEmail" name="email" class="form-input" required>
+                    <span class="error-message" id="profileEmailError"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="profilePhone">Телефон <span class="required">*</span></label>
+                    <input type="tel" id="profilePhone" name="phone" class="form-input" required>
+                    <span class="error-message" id="profilePhoneError"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label" for="profileNickname">Никнейм <span class="required">*</span></label>
+                    <input type="text" id="profileNickname" name="nickname" class="form-input" required readonly>
+                    <span class="error-message" id="profileNicknameError"></span>
+                    <p class="hint">Никнейм нельзя изменить после регистрации</p>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-submit" id="profileSaveBtn">Сохранить</button>
+                <button type="button" class="btn-cancel" id="profileCancelBtn">Отмена</button>
+                <button type="button" class="btn-reset" id="profileResetBtn">🗑️ Сбросить настройки</button>
+            </div>
+        </form>
+    </div>
+</div>
+
 <script src="js/api.js"></script>
 <script src="js/catalog.js"></script>
 <script src="js/logout.js"></script>
-<script src="js/preloader.js"></script>
+<script src="js/profile.js"></script>
 <script src="js/auth-toggle.js"></script>
+<script src="js/preloader.js"></script>
 
 </body>
 </html>
