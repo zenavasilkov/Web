@@ -4,56 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HSE Art and Design School</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ВАШ_API_КЛЮЧ&lang=ru_RU" type="text/javascript"></script>
+
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/mobile-menu.js"></script>
 </head>
 <body>
+
+<div id="preloader" class="preloader">
+    <div class="preloader__spinner"></div>
+    <div class="preloader__logo">
+        <img src="images/HSE_UNIVERSITY_ART_AND_DESIGN.png" alt="HSE">
+    </div>
+</div>
+
+<div class="burger-overlay"></div>
+
+<nav class="burger-menu">
+    <div class="burger-menu__header">
+        <img src="images/HSE_UNIVERSITY_ART_AND_DESIGN.png" alt="HSE" class="burger-menu__logo">
+        <button class="burger-menu__close" aria-label="Закрыть">×</button>
+    </div>
+    <ul class="burger-menu__list">
+        <li><a href="#programs">Направления обучения</a></li>
+        <li><a href="#news">Новости</a></li>
+        <li><a href="#resources">Ресурсы</a></li>
+        <li><a href="#about">О школе</a></li>
+        <li><a href="catalog.html">Каталог программ</a></li>
+        <li><a href="feedback.html">Отзывы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+    </ul>
+</nav>
 
 <header class="header">
     <div class="container">
         <div class="header__top">
             <img src="images/HSE_UNIVERSITY_ART_AND_DESIGN.png" height="30" width="270" alt="HSE University Art and Design" class="header__logo">
-
             <div class="header__actions">
                 <a href="#" class="lang-switch">EN</a>
                 <a href="#" class="lang-switch">中文</a>
                 <img src="images/dial.png" alt="Позвонить" class="header-icon">
                 <a href="#" id="header-button" class="btn-black">Как поступить</a>
 
-                <button class="header__menu-button" aria-label="Меню" aria-expanded="false">
-                    <span class="header__menu-icon"></span>
+                <button class="header__burger" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>
 
         <nav class="header__nav">
             <ul class="nav__list">
-                <li><a href="#">Бакалавриат</a></li>
-                <li><a href="#">Магистратура</a></li>
-                <li><a href="#">ДПО</a></li>
-                <li><a href="#">Аспирантура</a></li>
-                <li><a href="#">Microdegree</a></li>
+                <li><a href="#programs">Бакалавриат</a></li>
+                <li><a href="#programs">Магистратура</a></li>
+                <li><a href="#programs">ДПО</a></li>
+                <li><a href="#programs">Аспирантура</a></li>
+                <li><a href="#programs">Microdegree</a></li>
                 <li><a href="#">Студенческое портфолио</a></li>
-                <li><a href="#">Кампусы</a></li>
-                <li><a href="#">Все курсы</a></li>
+                <li><a href="#about">Кампусы</a></li>
+                <li><a href="catalog.html">Все курсы</a></li>
             </ul>
         </nav>
 
         <div class="header__sub-nav">
-            <a href="#">О школе</a>
+            <a href="#about">О школе</a>
             <a href="#" style="color: red;">Детская школа</a>
             <a href="#">Поступающим</a>
             <a href="#">Студентам</a>
-            <a href="#">Лаборатория дизайна</a>
-            <a href="#">Новости</a>
+            <a href="#resources">Лаборатория дизайна</a>
+            <a href="#news">Новости</a>
             <a href="#">Медиа</a>
             <a href="#">Еще</a>
             <a href="#">ALUMNI</a>
             <a href="#">HSE ART GALLERY</a>
-            <a href="catalog.html">Каталог программ</a>
         </div>
     </div>
 </header>
@@ -61,51 +95,59 @@
 <main>
     <section class="hero-banners">
         <div class="container">
-            <div class="banners-grid">
-                <!-- Banner 1 -->
-                <article class="banner-card">
-                    <div class="banner-card__image">
-                        <img src="images/banner-1.PNG" alt="Дни открытых дверей 21 января — Бакалавриат Дизайн и Мода">
+            <div class="swiper hero-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <article class="banner-card">
+                            <div class="banner-card__image">
+                                <img src="images/banner-1.PNG" alt="Дни открытых дверей 21 января — Бакалавриат Дизайн и Мода">
+                            </div>
+                            <div class="banner-card__content">
+                                <p class="banner-card__subtitle">Дни открытых дверей</p>
+                                <p class="banner-card__date">21 января | 12:00 — Бакалавриат<br>«Дизайн» и «Мода»</p>
+                                <a href="#" class="banner-card__link">Регистрация</a>
+                                <span class="banner-card__big-date">21.01</span>
+                            </div>
+                        </article>
                     </div>
-                    <div class="banner-card__content">
-                        <p class="banner-card__subtitle">Дни открытых дверей</p>
-                        <p class="banner-card__date">21 января | 12:00 — Бакалавриат<br>«Дизайн» и «Мода»</p>
-                        <a href="#" class="banner-card__link">Регистрация</a>
-                        <span class="banner-card__big-date">21.01</span>
+                    <div class="swiper-slide">
+                        <article class="banner-card banner-card--orange">
+                            <div class="banner-card__image">
+                                <img src="images/banner-2.png" alt="Дни открытых дверей 23 января — Магистратура">
+                            </div>
+                            <div class="banner-card__content">
+                                <p class="banner-card__subtitle">Дни открытых дверей</p>
+                                <p class="banner-card__date">23 января | 19:00 — Магистратура /<br>Дополнительное образование</p>
+                                <a href="#" class="banner-card__link">Регистрация</a>
+                                <span class="banner-card__big-date">23.01</span>
+                            </div>
+                        </article>
                     </div>
-                </article>
-
-                <!-- Banner 2 -->
-                <article class="banner-card">
-                    <div class="banner-card__image banner-card__image--orange">
-                        <img src="images/banner-2.png" alt="Дни открытых дверей 23 января — Магистратура">
+                    <div class="swiper-slide">
+                        <article class="banner-card">
+                            <div class="banner-card__image">
+                                <img src="images/banner-3.PNG" alt="Дни открытых дверей 31 января — Современное искусство">
+                            </div>
+                            <div class="banner-card__content">
+                                <p class="banner-card__subtitle">Дни открытых дверей</p>
+                                <p class="banner-card__date">31 января | 18:00 — Бакалавриат<br>«Современное искусство»</p>
+                                <a href="#" class="banner-card__link">Регистрация</a>
+                                <span class="banner-card__big-date">31.01</span>
+                            </div>
+                        </article>
                     </div>
-                    <div class="banner-card__content">
-                        <p class="banner-card__subtitle">Дни открытых дверей</p>
-                        <p class="banner-card__date">23 января | 19:00 — Магистратура /<br>Дополнительное образование</p>
-                        <a href="#" class="banner-card__link">Регистрация</a>
-                        <span class="banner-card__big-date">23.01</span>
-                    </div>
-                </article>
-
-                <!-- Banner 3 -->
-                <article class="banner-card">
-                    <div class="banner-card__image">
-                        <img src="images/banner-3.PNG" alt="Дни открытых дверей 31 января — Современное искусство">
-                    </div>
-                    <div class="banner-card__content">
-                        <p class="banner-card__subtitle">Дни открытых дверей</p>
-                        <p class="banner-card__date">31 января | 18:00 — Бакалавриат<br>«Современное искусство»</p>
-                        <a href="#" class="banner-card__link">Регистрация</a>
-                        <span class="banner-card__big-date">31.01</span>
-                    </div>
-                </article>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
 
     <section class="main-title-section">
-        <div class="container"><img src="images/huge_logo.png" alt="HSE ART AND DESIGN SCHOOL" class="huge-logo-img"></div>
+        <div class="container">
+            <img src="images/huge_logo.png" alt="HSE ART AND DESIGN SCHOOL" class="huge-logo-img">
+        </div>
     </section>
 
     <section class="carousel-section">
@@ -133,7 +175,6 @@
                 40 лучших молодых университетов мира и в топ-100 мировых вузов направления Arts & Humanities
                 по версии престижного международного рейтинга QS-2022.
             </p>
-
             <p class="school-description__subtitle">
                 В Школе дизайна НИУ ВШЭ открыты программы бакалавриата, магистратуры, аспирантуры, дополнительного образования,
                 а также детские курсы по более чем 15 образовательным направлениям. С 2020 года Школа дизайна предлагает также онлайн-обучение.
@@ -141,11 +182,9 @@
                 моды, современного искусства, фотографии, театра, программирования, гейм-дизайна, медиа, рекламы, кино,
                 анимации, саунд-арта и визуальных эффектов.
             </p>
-
             <div class="school-description__actions">
-                <button class="btn-black">КАК ПОСТУПИТЬ</button>
-                <button class="btn-outline">ДНИ ОТКРЫТЫХ ДВЕРЕЙ</button>
-
+                <button class="btn-black info-button">КАК ПОСТУПИТЬ</button>
+                <button class="btn-outline  info-button">ДНИ ОТКРЫТЫХ ДВЕРЕЙ</button>
                 <div class="social-icons">
                     <a href="#" class="social-icon"><img src="images/telegram.png" alt="Telegram"></a>
                     <a href="#" class="social-icon"><img src="images/vk.png" alt="VK"></a>
@@ -155,48 +194,55 @@
         </div>
     </section>
 
-    <section class="programs-section">
+    <section class="parallax-section" id="parallax">
+        <div class="parallax-layer parallax-layer--bg"></div>
+        <div class="parallax-layer parallax-layer--mid"></div>
+        <div class="parallax-layer parallax-layer--front"></div>
+        <div class="parallax-content">
+            <h2>ШКОЛА ДИЗАЙНА НИУ ВШЭ</h2>
+            <p>Создаем будущее дизайна вместе</p>
+        </div>
+    </section>
+
+    <section class="programs-section" id="programs">
         <div class="container">
             <h2 class="section-title">НАПРАВЛЕНИЯ ОБУЧЕНИЯ</h2>
-
             <div class="programs-list">
-                <a href="#" class="program-item">КОММУНИКАЦИОННЫЙ ДИЗАЙН</a>
-                <a href="#" class="program-item">АНИМАЦИЯ И ИЛЛЮСТРАЦИЯ</a>
-                <a href="#" class="program-item">КОМИКС</a>
-                <a href="#" class="program-item">CGI И ВИЗУАЛЬНЫЕ ЭФФЕКТЫ</a>
-                <a href="#" class="program-item">3D-ПОСТПРОДАКШН</a>
-                <a href="#" class="program-item">ДИЗАЙН СРЕДЫ И ИНТЕРЬЕРА</a>
-                <a href="#" class="program-item">СОВРЕМЕННОЕ ИСКУССТВО</a>
-                <a href="#" class="program-item">ФИГУРАТИВНОЕ ИСКУССТВО</a>
-                <a href="#" class="program-item">МОДА</a>
-                <a href="#" class="program-item">ГЕЙМ-ДИЗАЙН</a>
-                <a href="#" class="program-item">ДИЗАЙН И ПРОГРАММИРОВАНИЕ</a>
-                <a href="#" class="program-item">ДИЗАЙН И ПРОДВИЖЕНИЕ</a>
-                <a href="#" class="program-item">ИВЕНТ-ДИЗАЙН. ТЕАТР. ПЕРФОМАНС</a>
-                <a href="#" class="program-item">ИСКУССТВО РЕКЛАМЫ</a>
-                <a href="#" class="program-item">МЕДИА И ДИЗАЙН</a>
-                <a href="#" class="program-item">ПРЕДМЕТНЫЙ И ПРОМЫШЛЕННЫЙ ДИЗАЙН</a>
-                <a href="#" class="program-item">САУНД-АРТ И САУНД-ДИЗАЙН</a>
-                <a href="#" class="program-item">ТЕРРИТОРИАЛЬНЫЙ БРЕНДИНГ И ДИЗАЙН ГОРОДСКОЙ СРЕДЫ</a>
-                <a href="#" class="program-item">ТИПОГРАФИКА И ДИЗАЙН КНИГИ</a>
-                <a href="#" class="program-item program-item--highlight">УПРАВЛЕНИЕ В КРЕАТИВНЫХ ИНДУСТРИЯХ</a>
-                <a href="#" class="program-item">ФОТОГРАФИЯ</a>
-                <a href="#" class="program-item">ЭКРАННЫЕ ИСКУССТВА</a>
-                <a href="#" class="program-item">ЮВЕЛИРНЫЙ ДИЗАЙН</a>
-                <a href="#" class="program-item program-item--blue">ОНЛАЙН-ОБУЧЕНИЕ В ШКОЛЕ ДИЗАЙНА</a>
-                <a href="#" class="program-item">ШКОЛА ДИЗАЙНА НИУ ВШЭ — САНКТ-ПЕТЕРБУРГ</a>
-                <a href="#" class="program-item">ШКОЛА ДИЗАЙНА НИУ ВШЭ — НИЖНИЙ НОВГОРОД</a>
-                <a href="#" class="program-item program-item--blue">ШКОЛА ДИЗАЙНА НИУ ВШЭ — ПЕРМЬ (ОНЛАЙН-БАКАЛАВРИАТ)</a>
-                <a href="#" class="program-item">HSE ART AND DESIGN SCHOOL INTERNATIONAL — ЕРЕВАН</a>
-                <a href="#" class="program-item">ФАКУЛЬТЕТ ДОВУЗОВСКОЙ ПОДГОТОВКИ</a>
-                <a href="#" class="program-item">ДОПОЛНИТЕЛЬНОЕ ОБРАЗОВАНИЕ</a>
-                <a href="#" class="program-item">ДЕТСКАЯ ШКОЛА ДИЗАЙНА</a>
+                <a href="#" class="program-item" data-program-id="1">КОММУНИКАЦИОННЫЙ ДИЗАЙН</a>
+                <a href="#" class="program-item" data-program-id="2">АНИМАЦИЯ И ИЛЛЮСТРАЦИЯ</a>
+                <a href="#" class="program-item" data-program-id="3">КОМИКС</a>
+                <a href="#" class="program-item" data-program-id="4">CGI И ВИЗУАЛЬНЫЕ ЭФФЕКТЫ</a>
+                <a href="#" class="program-item" data-program-id="5">3D-ПОСТПРОДАКШН</a>
+                <a href="#" class="program-item" data-program-id="6">ДИЗАЙН СРЕДЫ И ИНТЕРЬЕРА</a>
+                <a href="#" class="program-item" data-program-id="7">СОВРЕМЕННОЕ ИСКУССТВО</a>
+                <a href="#" class="program-item" data-program-id="8">ФИГУРАТИВНОЕ ИСКУССТВО</a>
+                <a href="#" class="program-item" data-program-id="9">МОДА</a>
+                <a href="#" class="program-item" data-program-id="10">ГЕЙМ-ДИЗАЙН</a>
+                <a href="#" class="program-item" data-program-id="11">ДИЗАЙН И ПРОГРАММИРОВАНИЕ</a>
+                <a href="#" class="program-item" data-program-id="12">ДИЗАЙН И ПРОДВИЖЕНИЕ</a>
+                <a href="#" class="program-item" data-program-id="13">ИВЕНТ-ДИЗАЙН. ТЕАТР. ПЕРФОМАНС</a>
+                <a href="#" class="program-item" data-program-id="14">ИСКУССТВО РЕКЛАМЫ</a>
+                <a href="#" class="program-item" data-program-id="15">МЕДИА И ДИЗАЙН</a>
+                <a href="#" class="program-item" data-program-id="16">ПРЕДМЕТНЫЙ И ПРОМЫШЛЕННЫЙ ДИЗАЙН</a>
+                <a href="#" class="program-item" data-program-id="17">САУНД-АРТ И САУНД-ДИЗАЙН</a>
+                <a href="#" class="program-item" data-program-id="18">ТЕРРИТОРИАЛЬНЫЙ БРЕНДИНГ И ДИЗАЙН ГОРОДСКОЙ СРЕДЫ</a>
+                <a href="#" class="program-item" data-program-id="19">ТИПОГРАФИКА И ДИЗАЙН КНИГИ</a>
+                <a href="#" class="program-item program-item--highlight" data-program-id="20">УПРАВЛЕНИЕ В КРЕАТИВНЫХ ИНДУСТРИЯХ</a>
+                <a href="#" class="program-item" data-program-id="21">ФОТОГРАФИЯ</a>
+                <a href="#" class="program-item" data-program-id="22">ЭКРАННЫЕ ИСКУССТВА</a>
+                <a href="#" class="program-item" data-program-id="23">ЮВЕЛИРНЫЙ ДИЗАЙН</a>
+                <a href="#" class="program-item program-item--blue" data-program-id="24">ОНЛАЙН-ОБУЧЕНИЕ В ШКОЛЕ ДИЗАЙНА</a>
+                <a href="#" class="program-item" data-program-id="25">ШКОЛА ДИЗАЙНА НИУ ВШЭ — САНКТ-ПЕТЕРБУРГ</a>
+                <a href="#" class="program-item" data-program-id="26">ШКОЛА ДИЗАЙНА НИУ ВШЭ — НИЖНИЙ НОВГОРОД</a>
+                <a href="#" class="program-item program-item--blue" data-program-id="27">ШКОЛА ДИЗАЙНА НИУ ВШЭ — ПЕРМЬ (ОНЛАЙН-БАКАЛАВРИАТ)</a>
+                <a href="#" class="program-item" data-program-id="28">HSE ART AND DESIGN SCHOOL INTERNATIONAL — ЕРЕВАН</a>
+                <a href="#" class="program-item" data-program-id="29">ФАКУЛЬТЕТ ДОВУЗОВСКОЙ ПОДГОТОВКИ</a>
+                <a href="#" class="program-item" data-program-id="30">ДОПОЛНИТЕЛЬНОЕ ОБРАЗОВАНИЕ</a>
+                <a href="#" class="program-item" data-program-id="31">ДЕТСКАЯ ШКОЛА ДИЗАЙНА</a>
             </div>
-
             <div class="school-description__actions">
-                <button class="btn-black">КАК ПОСТУПИТЬ</button>
-                <button class="btn-outline">ДНИ ОТКРЫТЫХ ДВЕРЕЙ</button>
-
+                <button class="btn-black info-button">КАК ПОСТУПИТЬ</button>
+                <button class="btn-outline info-button">ДНИ ОТКРЫТЫХ ДВЕРЕЙ</button>
                 <div class="social-icons">
                     <a href="#" class="social-icon"><img src="images/telegram.png" alt="Telegram"></a>
                     <a href="#" class="social-icon"><img src="images/vk.png" alt="VK"></a>
@@ -206,10 +252,9 @@
         </div>
     </section>
 
-    <section class="news-section">
+    <section class="news-section" id="news">
         <div class="container">
             <h2 class="section-title">НОВОСТИ</h2>
-
             <div class="news-grid">
                 <article class="news-item news-item--featured">
                     <div class="news-item__image">
@@ -222,7 +267,6 @@
                         </p>
                     </div>
                 </article>
-
                 <article class="news-item news-item--featured">
                     <div class="news-item__image">
                         <img src="images/news_right.png" alt="Diploma22">
@@ -235,6 +279,17 @@
                     </div>
                 </article>
 
+                <article class="news-item video-trigger" data-video="videos/rick-astley-never-gonna-give-you-up.mp4">
+                    <div class="news-item__image">
+                        <img src="images/video-thumbnail.jpg" alt="Смотреть видео о школе">
+                        <div class="video-play-button">▶</div>
+                    </div>
+                    <div class="news-item__content">
+                        <h3 class="news-item__title">Видео о Школе дизайна</h3>
+                        <p class="news-item__excerpt">Посмотрите видео о жизни школы, проектах студентов и возможностях обучения</p>
+                    </div>
+                </article>
+
                 <article class="news-item">
                     <div class="news-item__content">
                         <h3 class="news-item__title">«Работа со студентами очень похожа на работу с редакцией». Интервью с Ольгой Страховской</h3>
@@ -243,7 +298,6 @@
                         </p>
                     </div>
                 </article>
-
                 <article class="news-item">
                     <div class="news-item__content">
                         <h3 class="news-item__title">Итоги фестиваля нового дизайна «Среда 2022».</h3>
@@ -252,7 +306,6 @@
                         </p>
                     </div>
                 </article>
-
                 <article class="news-item">
                     <div class="news-item__content">
                         <h3 class="news-item__title">Студия «Проектор» Мити Харшака создала альбом для Ботанического сада СПбГУ</h3>
@@ -262,17 +315,43 @@
                     </div>
                 </article>
             </div>
-
             <div class="news-section__more">
                 <button class="btn-black">БОЛЬШЕ НОВОСТЕЙ И СОБЫТИЙ</button>
             </div>
         </div>
     </section>
 
-    <section class="resources-section">
+    <section class="media-gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">ГАЛЕРЕЯ ПРОЕКТОВ</h2>
+            <div class="gallery-controls">
+                <button class="gallery-btn" data-sound="design">Дизайн</button>
+                <button class="gallery-btn" data-sound="art">Искусство</button>
+                <button class="gallery-btn" data-sound="tech">Технологии</button>
+            </div>
+            <div class="gallery-display">
+                <div class="gallery-image-wrapper">
+                    <img id="galleryImage" src="images/gallery/default.png" alt="Галерея" class="gallery-image">
+                    <div class="gallery-indicator" id="galleryIndicator">
+                        <span class="indicator-icon">▶️</span>
+                        <span class="indicator-text">Нажмите кнопку</span>
+                    </div>
+                </div>
+                <div class="gallery-info">
+                    <h3 id="galleryTitle">Выберите категорию</h3>
+                    <p id="galleryDescription">Нажмите на одну из кнопок выше, чтобы увидеть проекты и услышать звуковой эффект</p>
+                </div>
+                <div class="gallery-volume">
+                    <label>🔊 Громкость:</label>
+                    <input type="range" id="volumeControl" min="0" max="100" value="70">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resources-section" id="resources">
         <div class="container">
             <h2 class="section-title">РЕСУРСЫ</h2>
-
             <div class="resources-grid">
                 <article class="resource-item">
                     <div class="resource-item__image">
@@ -285,7 +364,6 @@
                         </p>
                     </div>
                 </article>
-
                 <article class="resource-item">
                     <div class="resource-item__image">
                         <img src="images/typography.png" alt="Типография">
@@ -297,7 +375,6 @@
                         </p>
                     </div>
                 </article>
-
                 <article class="resource-item">
                     <div class="resource-item__image">
                         <img src="images/design-lab.png" alt="Лаборатория дизайна">
@@ -309,7 +386,6 @@
                         </p>
                     </div>
                 </article>
-
                 <article class="resource-item">
                     <div class="resource-item__image">
                         <img src="images/computer-class.png" alt="Компьютерные классы">
@@ -321,7 +397,6 @@
                         </p>
                     </div>
                 </article>
-
                 <article class="resource-item">
                     <div class="resource-item__image">
                         <img src="images/porcelain-workshop.png" alt="Мастерская фарфора">
@@ -333,7 +408,6 @@
                         </p>
                     </div>
                 </article>
-
                 <article class="resource-item">
                     <div class="resource-item__image">
                         <img src="images/prepress.png" alt="Препресс и цифровая печать">
@@ -346,30 +420,27 @@
                     </div>
                 </article>
             </div>
-
             <div class="resources-section__more">
                 <button class="btn-black">ЕЩЁ</button>
             </div>
         </div>
     </section>
 
-    <section class="about-hse-section">
+    <section class="about-hse-section" id="about">
         <div class="container">
             <h2 class="about-hse__title">О ВЫСШЕЙ ШКОЛЕ ЭКОНОМИКИ</h2>
 
-            <div class="about-hse__stats">
+            <div class="about-hse__stats stats-grid">
                 <div class="stat-item">
-                    <div class="stat-item__number">51 000</div>
+                    <div class="stat-number" data-target="51000">0</div>
                     <div class="stat-item__label">студентов и аспирантов</div>
                 </div>
-
                 <div class="stat-item">
-                    <div class="stat-item__number">&gt;7 000</div>
+                    <div class="stat-number" data-target="7000">0</div>
                     <div class="stat-item__label">преподавателей и исследователей</div>
                 </div>
-
                 <div class="stat-item">
-                    <div class="stat-item__number">311</div>
+                    <div class="stat-number" data-target="311">0</div>
                     <div class="stat-item__label">программ высшего образования</div>
                 </div>
             </div>
@@ -381,7 +452,6 @@
                     авторитетных международных образовательных рейтингов
                     (QS, THE, ARWU, U.S. News Best Global Universities Subject)
                 </p>
-
                 <p>
                     Вышка — это не только экспертная площадка и научная лаборатория, но и представительная
                     дискуссионная площадка: сотрудники ВШЭ принимают активное участие в ключевых
@@ -393,9 +463,8 @@
             </div>
 
             <div class="about-hse__actions">
-                <button class="btn-black">КАК ПОСТУПИТЬ</button>
-                <button class="btn-light">ДНИ ОТКРЫТЫХ ДВЕРЕЙ</button>
-
+                <button class="btn-black info-button">КАК ПОСТУПИТЬ</button>
+                <button class="btn-light info-button">ДНИ ОТКРЫТЫХ ДВЕРЕЙ</button>
                 <div class="social-icons">
                     <a href="#" class="social-icon"><img src="images/telegram.png" alt="Telegram"></a>
                     <a href="#" class="social-icon"><img src="images/vk.png" alt="VK"></a>
@@ -405,6 +474,14 @@
         </div>
     </section>
 
+    <section class="map-section" id="contacts">
+        <div class="container">
+            <h2 class="section-title">НАШИ КОНТАКТЫ</h2>
+            <div class="map-container">
+                <div id="yandexMap" style="width: 100%; height: 500px;"></div>
+            </div>
+        </div>
+    </section>
 </main>
 
 <footer class="footer">
@@ -417,19 +494,16 @@
                 <p class="footer__subtitle">Школа дизайна Высшей школы экономики</p>
                 <img src="images/top_150_footer.png" alt="TOP 150">
             </div>
-
             <div class="footer__feedback">
-                <a href="feedback.html" >
-                    <button href="feedback.html" class="btn-feedback">ОСТАВИТЬ ОТЗЫВ</button>
+                <a href="feedback.html">
+                    <button class="btn-feedback">ОСТАВИТЬ ОТЗЫВ</button>
                 </a>
-
                 <div class="footer__student-links">
                     <a href="#">Обращения студентов</a>
                     <a href="#">Поблагодарить или пожаловаться</a>
                 </div>
             </div>
         </div>
-
         <div class="footer__contacts">
             <div class="footer__phones">
                 <h3 class="footer__heading">ТЕЛЕФОНЫ</h3>
@@ -464,7 +538,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="footer__address">
                 <h3 class="footer__heading">АДРЕС И EMAIL</h3>
                 <div class="address-item">
@@ -479,7 +552,6 @@
                 </div>
             </div>
         </div>
-
         <div class="footer__nav">
             <div class="footer__nav-column">
                 <h3 class="footer__nav-title">ОБРАЗОВАНИЕ</h3>
@@ -493,7 +565,6 @@
                     <li><a href="#">Базовые курсы</a></li>
                 </ul>
             </div>
-
             <div class="footer__nav-column">
                 <h3 class="footer__nav-title">ПОСТУПАЮЩИМ</h3>
                 <ul>
@@ -508,7 +579,6 @@
                     <li><a href="#">Лицей НИУ ВШЭ</a></li>
                 </ul>
             </div>
-
             <div class="footer__nav-column">
                 <h3 class="footer__nav-title">СТУДЕНТАМ</h3>
                 <ul>
@@ -525,7 +595,6 @@
                     <li><a href="#">Оставьте отзыв</a></li>
                 </ul>
             </div>
-
             <div class="footer__nav-column">
                 <h3 class="footer__nav-title">ВЫПУСКНИКАМ</h3>
                 <ul>
@@ -533,7 +602,6 @@
                     <li><a href="#">HSE Alumni</a></li>
                 </ul>
             </div>
-
             <div class="footer__nav-column">
                 <h3 class="footer__nav-title">РЕСУРСЫ</h3>
                 <ul>
@@ -552,7 +620,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="footer__bottom-nav">
             <div class="footer__nav-column">
                 <h3 class="footer__nav-title">О ШКОЛЕ</h3>
@@ -568,7 +635,6 @@
                     <li><a href="#">Контакты</a></li>
                 </ul>
             </div>
-
             <div class="footer__nav-column">
                 <h3 class="footer__nav-title">СОТРУДНИКАМ</h3>
                 <ul>
@@ -578,7 +644,6 @@
                     <li><a href="#">Экспедиции по городам России</a></li>
                 </ul>
             </div>
-
             <div class="footer__nav-column">
                 <h3 class="footer__nav-title">HSE ART GALLERY</h3>
                 <ul>
@@ -587,7 +652,6 @@
                     <li><a href="#">Instagram</a></li>
                 </ul>
             </div>
-
             <div class="footer__nav-column">
                 <h3 class="footer__nav-title">ДОПОЛНИТЕЛЬНО</h3>
                 <ul>
@@ -598,7 +662,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="footer__newsletter">
             <h2 class="footer__newsletter-title">Новости Школы дизайна</h2>
             <form class="footer__newsletter-form">
@@ -606,7 +669,6 @@
                 <button type="submit" class="btn-black">Подписаться</button>
             </form>
         </div>
-
         <div class="footer__bottom">
             <div class="footer__copyright">
                 © 1993–2022 Национальный исследовательский университет «Высшая школа экономики»
@@ -621,6 +683,44 @@
         </div>
     </div>
 </footer>
+
+<div class="modal" id="programModal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+        <button class="modal__close" aria-label="Закрыть">×</button>
+        <div class="modal__body" id="programModalBody"></div>
+    </div>
+</div>
+
+<div class="modal video-modal" id="videoModal">
+    <div class="modal__overlay"></div>
+    <div class="video-container">
+        <button class="video-close" aria-label="Закрыть видео">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="js/mobile-menu.js"></script>
+<script src="js/burger-menu.js"></script>
+<script src="js/preloader.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/modals.js"></script>
+<script src="js/toasts.js"></script>
+<script src="js/maps.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/video.js"></script>
+<script src="js/scroll.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/counters.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>

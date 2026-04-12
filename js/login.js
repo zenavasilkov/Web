@@ -118,6 +118,10 @@ loginForm.addEventListener('submit', async (e) => {
 
         alert(`✅ Добро пожаловать, ${user.firstName}!`);
 
+        if (window.opener) {
+            window.opener.postMessage('auth:login', '*');
+        }
+
         if (user.role === 'admin') {
             window.location.href = 'admin.html';
         } else {

@@ -24,6 +24,24 @@
     font-weight: 600;
 }
 
+#loginBtn,
+#logoutBtn,
+#adminBtn{
+    display: none;
+}
+
+body:not(.logged-in) #loginBtn {
+    display: inline-block;
+}
+
+body.logged-in.admin-role #adminBtn {
+    display: inline-block;
+}
+
+body.logged-in #logoutBtn {
+    display: inline-block;
+}
+
 .lang-switch {
     text-decoration: none;
     color: #000;
